@@ -1,0 +1,34 @@
+{% extends "base.njk" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<main class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>About Us</h1>
+            <p class="lead">We are a company dedicated to excellence.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="https://picsum.photos/seed/{{ env.id }}-about/500/400" class="img-fluid rounded" alt="About us">
+        </div>
+    </div>
+
+    <section class="my-5">
+        <h2>Our Team</h2>
+        <div class="row">
+            {% for member in team %}
+            <div class="col-md-4 text-center">
+                <img src="https://picsum.photos/seed/{{ env.id }}-{{ member.id }}/150/150" class="rounded-circle mb-3"
+                    alt="{{ member.name }}">
+                <h5>{{ member.name }}</h5>
+                <p class="text-muted">{{ member.role }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}

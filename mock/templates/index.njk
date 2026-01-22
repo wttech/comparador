@@ -1,0 +1,94 @@
+{% extends "base.njk" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">Environment: <strong>{{ env.name }}</strong></p>
+        <p>This is a mock website for testing the Comparador extension.</p>
+        <a href="/products" class="btn btn-primary btn-lg">View Products</a>
+    </div>
+</section>
+
+<main class="container">
+    <section class="my-5">
+        <h2>Features</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://picsum.photos/seed/{{ env.id }}-f1/200/200"
+                                class="img-fluid rounded-start" alt="Feature 1">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Feature One</h5>
+                                <p class="card-text">Description of feature one with environment-specific content.</p>
+                                <p class="card-text"><small class="text-muted">{{ env.name }} version</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://picsum.photos/seed/{{ env.id }}-f2/200/200"
+                                class="img-fluid rounded-start" alt="Feature 2">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Feature Two</h5>
+                                <p class="card-text">Another feature with different images per environment.</p>
+                                <p class="card-text"><small class="text-muted">{{ env.name }} version</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-5">
+        <h2>Statistics</h2>
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ env.productCount * 100 }}+</h3>
+                        <p class="card-text text-muted">Products</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ env.customers }}</h3>
+                        <p class="card-text text-muted">Customers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ env.satisfaction }}%</h3>
+                        <p class="card-text text-muted">Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card stats-card">
+                    <div class="card-body">
+                        <h3 class="card-title">24/7</h3>
+                        <p class="card-text text-muted">Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.njk" %}
+
+{% block title %}Products{% endblock %}
+
+{% set productNames = ['Wireless Headphones', 'Smart Watch Pro', 'Portable Speaker', 'USB-C Hub', 'Mechanical Keyboard']
+%}
+{% set productDescs = [
+'Premium noise-cancelling headphones with 30-hour battery life.',
+'Track your fitness goals with heart rate monitoring and GPS.',
+'Powerful 360° sound in a compact, waterproof design.',
+'7-in-1 hub with HDMI, USB-A, SD card reader and more.',
+'RGB backlit keys with hot-swappable switches for gamers.'
+] %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-4">Shop Our Collection</h1>
+        <p class="lead">Discover premium tech accessories for every need.</p>
+        <p>{{ env.productCount }} products available</p>
+    </div>
+</section>
+
+<main class="container">
+    <section id="products">
+        <div class="row">
+            {% for i in range(1, env.productCount + 1) %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://picsum.photos/seed/{{ env.id }}-product-{{ i }}/400/300" class="card-img-top"
+                        alt="{{ productNames[i-1] }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ productNames[i-1] }}</h5>
+                        <p class="card-text">{{ productDescs[i-1] }}</p>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="text-warning">★★★★{% if i % 2 == 0 %}★{% else %}☆{% endif %}</span>
+                            <small class="text-muted ms-2">({{ i * 47 + 23 }} reviews)</small>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="fw-bold">${{ i * 29 + 20 }}.99</span>
+                        <button class="btn btn-primary btn-sm">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="my-5">
+        <h2>Why Shop With Us?</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card stats-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">🚚</h3>
+                        <h5>Free Shipping</h5>
+                        <p class="card-text text-muted">On orders over $50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card stats-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">🔒</h3>
+                        <h5>Secure Payment</h5>
+                        <p class="card-text text-muted">100% secure checkout</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card stats-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">↩️</h3>
+                        <h5>Easy Returns</h5>
+                        <p class="card-text text-muted">30-day return policy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
