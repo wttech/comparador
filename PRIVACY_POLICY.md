@@ -4,13 +4,39 @@
 
 ## Overview
 
-Comparador is a Chrome extension for capturing and comparing web pages. This policy explains what data the extension accesses and how it's handled.
+Comparador is a **developer tool** — a Chrome extension designed for developers and QA engineers to capture and compare web pages across environments (development, staging, production). This policy explains what data the extension accesses and how it's handled.
 
-## Data Collection
+## Summary
 
-**Comparador does NOT collect, transmit, or share any user data.**
+- ✅ **Developer tool** — Intended for technical users comparing web environments
+- ✅ **No data transmission** — All captured data stays on your device
+- ✅ **No analytics or tracking** — No third-party services integrated
+- ✅ **No remote code** — All code runs locally from the extension package
+- ✅ **User-initiated only** — Extension only acts when you explicitly trigger a capture
 
-All data captured by the extension (screenshots, HTML, headers) is stored **locally** in your browser's IndexedDB storage. No data is ever sent to external servers.
+## Data Handling
+
+**Comparador does NOT transmit any data to external servers.**
+
+When you initiate a capture, the extension stores the following data **locally** in your browser's IndexedDB:
+
+### Data Captured (stored locally)
+
+- 📸 Full-page screenshots
+- 📄 HTML source code
+- 📋 HTTP response headers
+- 🖼️ Thumbnails for navigation
+
+This data is captured **only** from pages you explicitly choose to capture and is used solely for local comparison within the extension.
+
+### Data NOT Collected
+
+- ❌ Personal information (name, email, accounts)
+- ❌ Browsing history or behavior
+- ❌ Analytics, telemetry, or usage statistics
+- ❌ Crash reports or diagnostics
+
+Captures run in a separate browser window. Incognito mode can be enabled per project for session isolation. Custom headers and cookies can be configured for testing authenticated pages — these are user-provided values stored in project settings.
 
 ## Permissions Explained
 
@@ -26,10 +52,13 @@ Comparador requires the following Chrome permissions to function:
 
 ## User Control
 
-- **You decide what to capture** — The extension only captures pages when you explicitly initiate a capture
-- **Local storage only** — All data stays in your browser; nothing is uploaded
-- **Full deletion control** — Delete individual captures, entire projects, or uninstall to remove all data
-- **No background activity** — The extension does not run or collect data unless you actively use it
+All extension behavior is **user-initiated** and **explicitly configured**:
+
+- **You decide what to capture** — The extension only captures pages when you click "Capture"
+- **You configure browser context** — Headers, cookies, user agent, incognito mode — all opt-in via project settings
+- **You control storage** — Delete individual captures, entire projects, or uninstall to remove all data
+- **No background activity** — The extension does not run, monitor, or collect anything unless you actively use it
+- **No hidden behavior** — Every action is triggered by explicit user interaction; nothing happens automatically
 
 ## Data Storage
 
@@ -42,18 +71,35 @@ Comparador requires the following Chrome permissions to function:
 
 Comparador does **not** integrate with any third-party analytics, tracking, or data collection services.
 
+## Remote Code
+
+The extension is designed to run entirely locally without fetching external code.
+
+In rare cases, a third-party dependency may unintentionally load external assets like CSS/JS (e.g., highlight.js loading theme stylesheets from a CDN). If such behavior is discovered, the maintainers will address it by bundling the resource locally in a subsequent release.
+
+## Network Requests
+
+The extension makes network requests **only** to URLs you explicitly choose to capture. These requests:
+- Are initiated solely by user action (clicking "Capture")
+- Go directly to the target website you specified
+- Are used only to retrieve page content for local storage
+- Do not pass through any proxy or intermediary servers
+
 ## Open Source Components
 
-The extension uses open-source libraries for functionality:
-- ResembleJS for image comparison (runs locally)
-- Monaco Editor for code display (runs locally)
-- Ant Design for UI components (runs locally)
-
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for full license information.
+The extension uses open-source libraries. All run locally within the extension package. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the full list and license information.
 
 ## Changes to This Policy
 
-If we make changes to this privacy policy, we will update the "Last updated" date above.
+Any changes to this privacy policy will be reflected by updating the "Last updated" date above. Continued use of the extension after changes constitutes acceptance of the updated policy.
+
+## Chrome Web Store Policies
+
+This extension is designed in accordance with:
+- [Chrome Web Store Developer Program Policies](https://developer.chrome.com/docs/webstore/program-policies/)
+- [User Data Policy](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq/)
+
+All captured data (screenshots, HTML, headers) is used solely for the extension's core functionality — comparing web pages — and is never transmitted externally or monetized.
 
 ## Contact
 
