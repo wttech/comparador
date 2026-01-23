@@ -86,6 +86,15 @@ npm run setup   # One-time: generate certs, add hosts, trust CA (requires sudo)
 npm start       # Start the server
 ```
 
+### Using with Comparador
+
+Once the mock server is running and Comparador is installed:
+
+1. **Create a new project** in Comparador (e.g., "Acme")
+2. **Uncomment the environments and paths** in the "Variables for Scripts" section
+
+That's it! New projects come pre-configured to target the mock server environments. This also serves as a reference for how to properly configure Comparador for your real-world projects.
+
 ### Environments
 
 | Environment | URL                      |
@@ -123,4 +132,9 @@ Edit files in `mock/config/` to customize:
 
 ## License
 
-Free to use. Redistribution and modification prohibited. See [LICENSE](LICENSE) for details.
+| Component | License |
+|-----------|---------|
+| This repository (mock server, docs, examples) | [MIT](LICENSE) |
+| Chrome Extension | [Freeware](assets/LICENSE) |
+
+**Contributions welcome!** The mock server and documentation are open source under MIT.
