@@ -70,6 +70,20 @@ Install directly from the [Chrome Web Store](https://chrome.google.com/webstore/
 - **Scriptable capture** — Run custom JavaScript before capturing
 - **Browser context** — Set headers, cookies, user agent, and more
 
+## Permissions
+
+Comparador requires the following permissions to function:
+
+| Permission | Purpose |
+|------------|---------|
+| `activeTab` | Access the currently active tab to capture its URL and content |
+| `tabs` | Create and manage browser tabs for batch capture operations |
+| `debugger` | Use Chrome DevTools Protocol to capture full-page screenshots and extract HTML |
+| `webRequest` | Intercept HTTP response headers for comparison |
+| `host_permissions` | Capture pages from any website you choose to compare |
+
+**Privacy:** All data is stored locally in your browser. Nothing is sent to external servers. See [PRIVACY_POLICY.md](PRIVACY_POLICY.md) for details.
+
 ## Mock Server
 
 This repository includes a local HTTPS mock server for testing Comparador across multiple simulated environments.
@@ -136,5 +150,7 @@ Edit files in `mock/config/` to customize:
 | --------------------------------------------- | ------------------------------------ |
 | This repository (mock server, docs, examples) | [MIT](LICENSE)                       |
 | Chrome Extension                              | [Freeware](assets/EXTENSION-LICENSE) |
+
+See also: [Privacy Policy](PRIVACY_POLICY.md) · [Third-Party Notices](THIRD_PARTY_NOTICES.md)
 
 **Contributions welcome!** The mock server and documentation are open source under MIT.
