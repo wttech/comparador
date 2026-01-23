@@ -132,9 +132,9 @@ Edit files in `mock/config/` to customize:
 
 ## License
 
-| Component | License |
-|-----------|---------|
-| This repository (mock server, docs, examples) | [MIT](LICENSE) |
-| Chrome Extension | [Freeware](assets/EXTENSION-LICENSE) |
+| Component                                     | License                              |
+| --------------------------------------------- | ------------------------------------ |
+| This repository (mock server, docs, examples) | [MIT](LICENSE)                       |
+| Chrome Extension                              | [Freeware](assets/EXTENSION-LICENSE) |
 
 **Contributions welcome!** The mock server and documentation are open source under MIT.
