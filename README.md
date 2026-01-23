@@ -17,32 +17,33 @@ Comparador helps developers detect visual and functional differences between web
 #### 1. Organize URLs by project
 > Group your pages into projects and categories for easy management
 
-![Organize URLs](https://placehold.co/640x320/1a1a2e/ffffff?text=Organize+URLs)
-<!-- Replace with: doc/step-1-organize.png -->
+![Dashboard](assets/screenshots/organize-0-dashboard.png)
+![Groups](assets/screenshots/organize-1-groups.png)
+![URLs](assets/screenshots/organize-2-urls.png)
 
 #### 2. Capture pages across environments
 > Run batch captures with custom scripts and browser settings
 
-![Capture pages](https://placehold.co/640x320/16213e/ffffff?text=Capture+Pages)
-<!-- Replace with: doc/step-2-capture.png -->
+![Capture pages](assets/screenshots/capture-pages-1.png)
+![Capture progress](assets/screenshots/capture-pages-2.png)
 
 #### 3. Compare screenshots visually
 > Pixel-perfect diff with mismatch percentage and dimension tracking
 
-![Compare screenshots](https://placehold.co/640x320/0f3460/ffffff?text=Compare+Screenshots)
-<!-- Replace with: doc/step-3-screenshot-diff.png -->
+![Compare batch](assets/screenshots/compare-1-batch.png)
+![Compare screenshots](assets/screenshots/compare-2-screenshots.png)
 
 #### 4. Dive into HTML changes
 > Side-by-side code diff with syntax highlighting
 
-![Compare HTML](https://placehold.co/640x320/533483/ffffff?text=Compare+HTML)
-<!-- Replace with: doc/step-4-html-diff.png -->
+![Compare HTML](assets/screenshots/compare-3-html.png)
 
 #### 5. Review headers & fine-tune settings
 > Compare response headers and adjust comparison thresholds
 
-![Settings](https://placehold.co/640x320/e94560/ffffff?text=Settings)
-<!-- Replace with: doc/step-5-settings.png -->
+![Response headers](assets/screenshots/compare-4-response-headers.png)
+![Project settings](assets/screenshots/customize-1-project.png)
+![Global settings](assets/screenshots/customize-2-global-settings.png)
 
 ## Installation
 
