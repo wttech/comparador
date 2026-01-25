@@ -112,9 +112,9 @@ npm start
 
 **Using with Comparador:**
 1. Create a new project (e.g., "Acme")
-2. Uncomment the environments and paths in project variables
-3. Run Setup Script to generate URLs
-4. Capture and compare
+2. Uncomment environments and paths in **Variables**
+3. Go to **Manage** → select project → **Setup** → **Generate Preview** → **Apply Changes**
+4. Capture pages and compare across environments
 
 New projects come pre-configured for mock server — serves as a reference for real-world setup.
 
