@@ -103,20 +103,25 @@ Comparador works alongside CI/CD tools. Use it for:
 | ![Dashboard](assets/screenshots/organize-0-dashboard.png) | ![Capture](assets/screenshots/capture-pages-1.png) |
 |                  Projects, groups, URLs                   |            Batch capture with progress             |
 
-|                     Side by Side                      |                         Swipe View                          |
-| :---------------------------------------------------: | :---------------------------------------------------------: |
-| ![Side by Side](assets/screenshots/compare-2-screenshots-1.png) | ![Swipe](assets/screenshots/compare-2-screenshots-2.png) |
-|     Differences highlighted in pink                   |         Drag the red line to reveal changes                 |
+|                  Compare Captures                   |                      Compare: Side by Side                      |
+| :-------------------------------------------------: | :-------------------------------------------------------------: |
+|  ![Compare](assets/screenshots/compare-1-batch.png) | ![Side by Side](assets/screenshots/compare-2-screenshots-1.png) |
+|          Select two captures to compare             |              Differences highlighted in pink                    |
 
-|                      HTML Diff                      |                        Scripts                         |
-| :-------------------------------------------------: | :----------------------------------------------------: |
-| ![HTML Diff](assets/screenshots/compare-3-html.png) | ![Scripts](assets/screenshots/customize-3-scripts.png) |
-|           Side-by-side source comparison            |            Browser, page, setup, navigation            |
+|                   Compare: Swipe View                    |                      HTML Diff                      |
+| :------------------------------------------------------: | :-------------------------------------------------: |
+| ![Swipe](assets/screenshots/compare-2-screenshots-2.png) | ![HTML Diff](assets/screenshots/compare-3-html.png) |
+|          Drag the red line to reveal changes             |           Side-by-side source comparison            |
 
-|                        Popup                        |                        Settings                         |
-| :-------------------------------------------------: | :-----------------------------------------------------: |
-| ![Popup](assets/screenshots/popup-1-navigation.png) | ![Settings](assets/screenshots/customize-1-project.png) |
-|         Quick capture & environment switch          |                Per-project configuration                |
+|                        Scripts                         |                        Popup                        |
+| :----------------------------------------------------: | :-------------------------------------------------: |
+| ![Scripts](assets/screenshots/customize-3-scripts.png) | ![Popup](assets/screenshots/popup-1-navigation.png) |
+|            Browser, page, setup, navigation            |         Quick capture & environment switch          |
+
+|                        Settings                         |
+| :-----------------------------------------------------: |
+| ![Settings](assets/screenshots/customize-1-project.png) |
+|                Per-project configuration                |
 
 ---
 
