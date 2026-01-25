@@ -103,10 +103,10 @@ Comparador works alongside CI/CD tools. Use it for:
 | ![Dashboard](assets/screenshots/organize-0-dashboard.png) | ![Capture](assets/screenshots/capture-pages-1.png) |
 |                  Projects, groups, URLs                   |            Batch capture with progress             |
 
-|                  Compare Captures                  |                            Visual Diff                             |
-| :------------------------------------------------: | :----------------------------------------------------------------: |
-| ![Compare](assets/screenshots/compare-1-batch.png) | ![Screenshot Diff](assets/screenshots/compare-2-screenshots-1.png) |
-|           Select two captures to compare           |                 Pixel-level screenshot comparison                  |
+|                     Side by Side                      |                         Swipe View                          |
+| :---------------------------------------------------: | :---------------------------------------------------------: |
+| ![Side by Side](assets/screenshots/compare-2-screenshots-1.png) | ![Swipe](assets/screenshots/compare-2-screenshots-2.png) |
+|     Differences highlighted in pink                   |         Drag the red line to reveal changes                 |
 
 |                      HTML Diff                      |                        Scripts                         |
 | :-------------------------------------------------: | :----------------------------------------------------: |
