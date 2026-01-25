@@ -18,12 +18,12 @@ No pipelines. No accounts. No external servers.
 
 ### Why Comparador?
 
-| Traditional VRT Tools     | Comparador               |
-| ------------------------- | ------------------------ |
-| Require CI/CD integration | Works standalone         |
-| Need baseline management  | Compare any two captures |
-| SaaS with accounts        | Runs entirely in browser |
-| Complex setup             | Install and go           |
+| Traditional VRT Tools       | Comparador                 |
+| --------------------------- | -------------------------- |
+| 🔧 Require CI/CD integration | ✅ Works standalone         |
+| 📁 Need baseline management  | ✅ Compare any two captures |
+| ☁️ SaaS with accounts        | ✅ Runs entirely in browser |
+| ⏳ Complex setup             | ✅ Install and go           |
 
 **Use cases:**
 - Did deployment break anything?
@@ -58,18 +58,22 @@ GUI provides sensible defaults. Power users can script everything:
 
 ## Comparador vs Alternatives
 
-| Feature                      |     Comparador     | Percy / Chromatic  |     BackstopJS     |   Playwright VRT   |
-| ---------------------------- | :----------------: | :----------------: | :----------------: | :----------------: |
-| **Setup time**               |     🟢 Minutes      |      🟡 Hours       |      🟡 Hours       |       🔴 Days       |
-| **Infrastructure required**  |   🟢 Chrome only    |       🔴 SaaS       |     🟡 Node.js      |      🟡 CI/CD       |
-| **Account required**         |        🟢 No        |       🔴 Yes        |        🟢 No        |        🟢 No        |
-| **Works offline**            |       🟢 Yes        |        🔴 No        |       🟢 Yes        |       🟢 Yes        |
-| **Ad-hoc comparisons**       | 🟢 Any two captures |  🔴 Baseline only   |  🔴 Baseline only   |  🔴 Baseline only   |
-| **Beyond screenshots**       |  🟢 HTML + headers  | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
-| **Auth / cookies scripting** |       🟢 Yes        |      🟡 Config      |      🟡 Config      |       🟢 Yes        |
-| **CI/CD integration**        |        🔴 No        |       🟢 Yes        |       🟢 Yes        |       🟢 Yes        |
-| **Baseline management**      |      🟡 Manual      |    🟢 Automatic     |    🟢 Automatic     |    🟢 Automatic     |
-| **Team collaboration**       |    🔴 Local only    | 🟢 Cloud dashboard  |       🟡 Git        |       🟡 Git        |
+| Feature                      | Comparador         | Percy / Chromatic  | BackstopJS         | Playwright VRT     |
+| ---------------------------- | ------------------ | ------------------ | ------------------ | ------------------ |
+| **Setup time**               | 🟢 Minutes          | 🟡 Hours            | 🟡 Hours            | 🔴 Days             |
+| **Infrastructure required**  | 🟢 Chrome only      | 🔴 SaaS             | 🟡 Node.js          | 🟡 CI/CD            |
+| **Account required**         | 🟢 No               | 🔴 Yes              | 🟢 No               | 🟢 No               |
+| **Works offline**            | 🟢 Yes              | 🔴 No               | 🟢 Yes              | 🟢 Yes              |
+| **Ad-hoc comparisons**       | 🟢 Any two captures | 🔴 Baseline only    | 🔴 Baseline only    | 🔴 Baseline only    |
+| **Beyond screenshots**       | 🟢 HTML + headers   | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
+| **Auth / cookies scripting** | 🟢 Yes ¹            | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
+| **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
+| **Baseline management**      | 🟡 Manual           | 🟢 Automatic        | 🟢 Automatic        | 🟢 Automatic        |
+| **Team collaboration**       | 🔴 Local only       | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
+
+<sub>
+¹ Via Browser Script — set headers, cookies, user-agent before page load.
+</sub>
 
 ### When to use Comparador
 
