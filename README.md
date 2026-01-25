@@ -56,14 +56,67 @@ GUI provides sensible defaults. Power users can script everything:
 
 ---
 
+## Comparador vs Alternatives
+
+| Feature                      |     Comparador     | Percy / Chromatic  |     BackstopJS     |   Playwright VRT   |
+| ---------------------------- | :----------------: | :----------------: | :----------------: | :----------------: |
+| **Setup time**               |     🟢 Minutes      |      🟡 Hours       |      🟡 Hours       |       🔴 Days       |
+| **Infrastructure required**  |   🟢 Chrome only    |       🔴 SaaS       |     🟡 Node.js      |      🟡 CI/CD       |
+| **Account required**         |        🟢 No        |       🔴 Yes        |        🟢 No        |        🟢 No        |
+| **Works offline**            |       🟢 Yes        |        🔴 No        |       🟢 Yes        |       🟢 Yes        |
+| **Ad-hoc comparisons**       | 🟢 Any two captures |  🔴 Baseline only   |  🔴 Baseline only   |  🔴 Baseline only   |
+| **Beyond screenshots**       |  🟢 HTML + headers  | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
+| **Auth / cookies scripting** |       🟢 Yes        |      🟡 Config      |      🟡 Config      |       🟢 Yes        |
+| **CI/CD integration**        |        🔴 No        |       🟢 Yes        |       🟢 Yes        |       🟢 Yes        |
+| **Baseline management**      |      🟡 Manual      |    🟢 Automatic     |    🟢 Automatic     |    🟢 Automatic     |
+| **Team collaboration**       |    🔴 Local only    | 🟢 Cloud dashboard  |       🟡 Git        |       🟡 Git        |
+
+### When to use Comparador
+
+✅ **Best for:**
+- QA engineers doing manual exploratory testing
+- Developers debugging production issues
+- Quick "before/after" deployment checks
+- Comparing staging vs production
+- Teams without CI/CD pipeline access
+- Privacy-sensitive projects (data stays local)
+
+❌ **Not ideal for:**
+- Fully automated CI/CD visual regression
+- Large teams needing shared baselines
+- Hundreds of pages requiring scheduled runs
+
+### Complementary usage
+
+Comparador works alongside CI/CD tools. Use it for:
+- Ad-hoc debugging when CI catches a diff
+- Testing environments not in your pipeline
+- Quick checks before committing
+- Investigating customer-reported visual issues
+
+---
+
 ## Screenshots
 
-|                                                           |                                                                  |
-| --------------------------------------------------------- | ---------------------------------------------------------------- |
-| ![Dashboard](assets/screenshots/organize-0-dashboard.png) | ![Groups](assets/screenshots/organize-1-groups.png)              |
-| ![URLs](assets/screenshots/organize-2-urls.png)           | ![Capture](assets/screenshots/capture-pages-1.png)               |
-| ![Compare](assets/screenshots/compare-1-batch.png)        | ![Screenshot Diff](assets/screenshots/compare-2-screenshots.png) |
-| ![HTML Diff](assets/screenshots/compare-3-html.png)       | ![Settings](assets/screenshots/customize-1-project.png)          |
+|                       Organize URLs                       |                   Capture Pages                    |
+| :-------------------------------------------------------: | :------------------------------------------------: |
+| ![Dashboard](assets/screenshots/organize-0-dashboard.png) | ![Capture](assets/screenshots/capture-pages-1.png) |
+|                  Projects, groups, URLs                   |            Batch capture with progress             |
+
+|                  Compare Captures                  |                           Visual Diff                            |
+| :------------------------------------------------: | :--------------------------------------------------------------: |
+| ![Compare](assets/screenshots/compare-1-batch.png) | ![Screenshot Diff](assets/screenshots/compare-2-screenshots.png) |
+|           Select two captures to compare           |                Pixel-level screenshot comparison                 |
+
+|                      HTML Diff                      |                        Scripts                         |
+| :-------------------------------------------------: | :----------------------------------------------------: |
+| ![HTML Diff](assets/screenshots/compare-3-html.png) | ![Scripts](assets/screenshots/customize-3-scripts.png) |
+|           Side-by-side source comparison            |            Browser, page, setup, navigation            |
+
+|                        Popup                        |                        Settings                         |
+| :-------------------------------------------------: | :-----------------------------------------------------: |
+| ![Popup](assets/screenshots/popup-1-navigation.png) | ![Settings](assets/screenshots/customize-1-project.png) |
+|         Quick capture & environment switch          |                Per-project configuration                |
 
 ---
 
