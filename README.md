@@ -66,14 +66,10 @@ GUI provides sensible defaults. Power users can script everything:
 | **Works offline**            | 🟢 Yes              | 🔴 No               | 🟢 Yes              | 🟢 Yes              |
 | **Ad-hoc comparisons**       | 🟢 Any two captures | 🔴 Baseline only    | 🔴 Baseline only    | 🔴 Baseline only    |
 | **Beyond screenshots**       | 🟢 HTML + headers   | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
-| **Auth / cookies scripting** | 🟢 Yes ¹            | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
+| **Auth / cookies scripting** | 🟢 Yes              | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
 | **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
 | **Baseline management**      | 🟡 Manual           | 🟢 Automatic        | 🟢 Automatic        | 🟢 Automatic        |
 | **Team collaboration**       | 🔴 Local only       | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
-
-<sub>
-¹ Via Browser Script — set headers, cookies, user-agent before page load.
-</sub>
 
 ### When to use Comparador
 
