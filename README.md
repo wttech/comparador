@@ -2,48 +2,70 @@
   <img src="assets/logo.png" width="640" alt="Comparador">
 </p>
 
+<p align="center">
+  <strong>Fast visual regression testing without the infrastructure</strong><br>
+  Chrome Extension · Freeware · Serverless · Privacy-first
+</p>
+
 ---
 
-## Overview
+## What is Comparador?
 
-Comparador helps developers detect visual and functional differences between website environments (dev, stage, production) by comparing:
+Comparador is a Chrome Extension for **on-demand visual regression testing** — compare web pages across environments, track changes over time, debug deployment issues.
 
-- 📸 **Fullscreen screenshots** with visual diff highlighting
-- 📄 **HTML source code** with side-by-side comparison
-- 📋 **Response headers** differences
+**Install → Capture → Compare.**  
+No pipelines. No accounts. No external servers.
 
-### Screenshots
+### Why Comparador?
 
-#### 1. Organize URLs by project
-> Group your pages into projects and categories for easy management
+| Traditional VRT Tools     | Comparador               |
+| ------------------------- | ------------------------ |
+| Require CI/CD integration | Works standalone         |
+| Need baseline management  | Compare any two captures |
+| SaaS with accounts        | Runs entirely in browser |
+| Complex setup             | Install and go           |
 
-![Dashboard](assets/screenshots/organize-0-dashboard.png)
-![Groups](assets/screenshots/organize-1-groups.png)
-![URLs](assets/screenshots/organize-2-urls.png)
+**Use cases:**
+- Did deployment break anything?
+- Is staging identical to production?
+- What exactly changed — layout, HTML, headers?
+- Track visual changes over time
 
-#### 2. Capture pages across environments
-> Run batch captures with custom scripts and browser settings
+---
 
-![Capture pages](assets/screenshots/capture-pages-1.png)
-![Capture progress](assets/screenshots/capture-pages-2.png)
+## Key Features
 
-#### 3. Compare screenshots visually
-> Pixel-perfect diff with mismatch percentage and dimension tracking
+| Feature             | Description                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| 📸 **Visual Diff**   | Full-page screenshots with pixel-level comparison, mismatch %, multiple view modes |
+| 📄 **HTML Diff**     | Side-by-side source comparison with syntax highlighting                            |
+| 📋 **Headers Diff**  | Compare response headers (cache, CDN, security)                                    |
+| 🚀 **Batch Capture** | Capture projects or groups of URLs, compare across environments                    |
+| ⚡ **Popup**         | Quick environment switching + fast access to frequently tested pages               |
 
-![Compare batch](assets/screenshots/compare-1-batch.png)
-![Compare screenshots](assets/screenshots/compare-2-screenshots.png)
+### 🔧 Scriptable & Extensible
 
-#### 4. Dive into HTML changes
-> Side-by-side code diff with syntax highlighting
+GUI provides sensible defaults. Power users can script everything:
 
-![Compare HTML](assets/screenshots/compare-3-html.png)
+| Script                | Purpose                                                |
+| --------------------- | ------------------------------------------------------ |
+| **Browser Script**    | Auth headers, cookies, blocked URLs, user-agent        |
+| **Page Script**       | Hide cookie banners, wait for animations               |
+| **Navigation Script** | Custom environment switcher in popup                   |
+| **Setup Script**      | Auto-generate URLs (envs × paths matrix, sitemap, API) |
 
-#### 5. Review headers & fine-tune settings
-> Compare response headers and adjust comparison thresholds
+---
 
-![Response headers](assets/screenshots/compare-4-response-headers.png)
-![Project settings](assets/screenshots/customize-1-project.png)
-![Global settings](assets/screenshots/customize-2-global-settings.png)
+## Screenshots
+
+|                                                           |                                                                  |
+| --------------------------------------------------------- | ---------------------------------------------------------------- |
+| ![Dashboard](assets/screenshots/organize-0-dashboard.png) | ![Groups](assets/screenshots/organize-1-groups.png)              |
+| ![URLs](assets/screenshots/organize-2-urls.png)           | ![Capture](assets/screenshots/capture-pages-1.png)               |
+| ![Compare](assets/screenshots/compare-1-batch.png)        | ![Screenshot Diff](assets/screenshots/compare-2-screenshots.png) |
+| ![HTML Diff](assets/screenshots/compare-3-html.png)       | ![Settings](assets/screenshots/customize-1-project.png)          |
+
+---
 
 ## Installation
 
@@ -53,105 +75,59 @@ Install directly from the [Chrome Web Store](https://chrome.google.com/webstore/
 
 ### From Release (Manual)
 
-1. Download the `comparador-*.zip` file from [Releases](../../releases)
+1. Download `comparador-*.zip` from [Releases](../../releases)
 2. Extract the ZIP file
 3. Open `chrome://extensions/`
 4. Enable **Developer mode** (toggle in top-right)
 5. Click **Load unpacked** and select the extracted folder
 
-## Features
-
-- **Multi-environment comparison** — Compare dev, staging, and production side by side
-- **Full-page screenshots** — Capture entire pages, not just the viewport
-- **Visual diff** — Highlight pixel-level differences between screenshots
-- **HTML diff** — Monaco-powered side-by-side code comparison
-- **Headers diff** — Compare response headers between environments
-- **Batch capture** — Capture multiple URLs in one session
-- **Project organization** — Group URLs by project and category
-- **Scriptable capture** — Run custom JavaScript before capturing
-- **Browser context** — Set headers, cookies, user agent, and more
+---
 
 ## Permissions
 
-Comparador requires the following permissions to function:
+| Permission         | Purpose                                                                |
+| ------------------ | ---------------------------------------------------------------------- |
+| `activeTab`        | Access current tab to capture URL and content                          |
+| `tabs`             | Create/manage tabs for batch capture                                   |
+| `debugger`         | Chrome DevTools Protocol for full-page screenshots and HTML extraction |
+| `webRequest`       | Intercept response headers for comparison                              |
+| `host_permissions` | Capture pages from any website                                         |
 
-| Permission | Purpose |
-|------------|---------|
-| `activeTab` | Access the currently active tab to capture its URL and content |
-| `tabs` | Create and manage browser tabs for batch capture operations |
-| `debugger` | Use Chrome DevTools Protocol to capture full-page screenshots and extract HTML |
-| `webRequest` | Intercept HTTP response headers for comparison |
-| `host_permissions` | Capture pages from any website you choose to compare |
+**Privacy:** All data stored locally. Nothing sent to external servers. See [PRIVACY_POLICY.md](PRIVACY_POLICY.md).
 
-**Privacy:** All data is stored locally in your browser. Nothing is sent to external servers. See [PRIVACY_POLICY.md](PRIVACY_POLICY.md) for details.
+---
 
 ## Mock Server
 
-This repository includes a local HTTPS mock server for testing Comparador across multiple simulated environments.
-
-<!-- TODO: Add mock screenshot -->
-<!-- <p><img src="doc/mock-website.png" width="640"/></p> -->
-
-### Quick Start
+Local HTTPS mock server for testing Comparador.
 
 ```bash
 cd mock
 npm install
 npm run setup   # One-time: generate certs, add hosts, trust CA (requires sudo)
-npm start       # Start the server
+npm start
 ```
 
-### Using with Comparador
+**Environments:** `dev.acme.local`, `stage.acme.local`, `www.acme.local`
 
-Once the mock server is running and Comparador is installed:
+**Using with Comparador:**
+1. Create a new project (e.g., "Acme")
+2. Uncomment the environments and paths in project variables
+3. Run Setup Script to generate URLs
+4. Capture and compare
 
-1. **Create a new project** in Comparador (e.g., "Acme")
-2. **Uncomment the environments and paths** in the "Variables for Scripts" section
+New projects come pre-configured for mock server — serves as a reference for real-world setup.
 
-That's it! New projects come pre-configured to target the mock server environments. This also serves as a reference for how to properly configure Comparador for your real-world projects.
-
-### Environments
-
-| Environment | URL                      |
-| ----------- | ------------------------ |
-| Development | https://dev.acme.local   |
-| Staging     | https://stage.acme.local |
-| Production  | https://www.acme.local   |
-
-### Pages
-
-- `/` — Home page
-- `/about` — About page
-- `/products` — Products page
-
-Each environment has slightly different content to demonstrate Comparador's diff capabilities.
-
-### Setup Details
-
-The setup script:
-1. Generates self-signed SSL certificates
-2. Adds entries to `/etc/hosts` for the local domains
-3. Trusts the CA certificate in macOS Keychain (requires sudo)
-
-### Customization
-
-Edit files in `mock/config/` to customize:
-- `environments.ts` — Define environment domains and ports
-- `routes.ts` — Define available routes/pages
-- `data.ts` — Environment-specific content
+---
 
 ## Authors
 
 - **Krystian Panek** — Founder & Maintainer — [krystian.panek@vml.com](mailto:krystian.panek@vml.com)
 - **Tomasz Sobczyk** — Consultancy — [tomasz.sobczyk@vml.com](mailto:tomasz.sobczyk@vml.com)
 
+---
+
 ## License
 
-| Component                                     | License                              |
-| --------------------------------------------- | ------------------------------------ |
-| This repository (mock server, docs, examples) | [MIT](LICENSE)                       |
-| Chrome Extension                              | [Freeware](assets/EXTENSION-LICENSE) |
-
-See also: [Privacy Policy](PRIVACY_POLICY.md) · [Third-Party Notices](THIRD_PARTY_NOTICES.md)
-
-**Contributions welcome!** The mock server and documentation are open source under MIT.
+- **Extension:** [Freeware](assets/EXTENSION-LICENSE)
+- **This repo:** [MIT](LICENSE)

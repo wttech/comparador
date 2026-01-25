@@ -61,6 +61,8 @@ Comparador uses the following open-source libraries:
 | monaco-editor                 | MIT                       |
 | nopt                          | MIT                       |
 | pako                          | (MIT AND Zlib)            |
+| pixelmatch                    | ISC                       |
+| pngjs                         | MIT                       |
 | process-nextick-args          | MIT                       |
 | rc-cascader                   | MIT                       |
 | rc-checkbox                   | MIT                       |
