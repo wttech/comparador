@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Instant visual regression testing without the infrastructure</strong><br>
+  <strong>Instant visual regression testing</strong><br>
   Chrome Extension · Freeware · Serverless · Privacy-first
 </p>
 
