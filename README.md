@@ -107,15 +107,15 @@ Comparador works alongside CI/CD tools. Use it for:
 | ![Dashboard](assets/screenshots/organize-0-dashboard.png) | ![Capture](assets/screenshots/capture-pages-1.png) |
 |                  Projects, groups, URLs                   |            Batch capture with progress             |
 
-|                  Compare Captures                   |                      Compare: Side by Side                      |
-| :-------------------------------------------------: | :-------------------------------------------------------------: |
-|  ![Compare](assets/screenshots/compare-1-batch.png) | ![Side by Side](assets/screenshots/compare-2-screenshots-1.png) |
-|          Select two captures to compare             |              Differences highlighted in pink                    |
+|                  Compare Captures                  |                      Compare: Side by Side                      |
+| :------------------------------------------------: | :-------------------------------------------------------------: |
+| ![Compare](assets/screenshots/compare-1-batch.png) | ![Side by Side](assets/screenshots/compare-2-screenshots-1.png) |
+|           Select two captures to compare           |                 Differences highlighted in pink                 |
 
 |                   Compare: Swipe View                    |                      HTML Diff                      |
 | :------------------------------------------------------: | :-------------------------------------------------: |
 | ![Swipe](assets/screenshots/compare-2-screenshots-2.png) | ![HTML Diff](assets/screenshots/compare-3-html.png) |
-|          Drag the red line to reveal changes             |           Side-by-side source comparison            |
+|           Drag the red line to reveal changes            |           Side-by-side source comparison            |
 
 |                        Scripts                         |                        Popup                        |
 | :----------------------------------------------------: | :-------------------------------------------------: |
