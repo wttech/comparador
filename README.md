@@ -7,6 +7,10 @@
   Chrome Extension · Freeware · Serverless · Privacy-first
 </p>
 
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/ocfpngpgnhjcpnolhjkpfanhgoalbbhd"><img src="https://img.shields.io/chrome-web-store/v/ocfpngpgnhjcpnolhjkpfanhgoalbbhd?label=Chrome%20Web%20Store" alt="Chrome Web Store"></a>
+</p>
+
 ---
 
 ## What is Comparador?
