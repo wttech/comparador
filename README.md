@@ -22,12 +22,12 @@ No pipelines. No accounts. No external servers.
 
 ### Why Comparador?
 
-| Traditional VRT Tools       | Comparador                 |
-| --------------------------- | -------------------------- |
-| 🔧 Require CI/CD integration | ✅ Works standalone         |
-| 📁 Need baseline management  | ✅ Compare any two captures |
-| ☁️ SaaS with accounts        | ✅ Runs entirely in browser |
-| ⏳ Complex setup             | ✅ Install and go           |
+| Traditional VRT Tools       | Comparador                      |
+| --------------------------- | ------------------------------- |
+| 🔧 Require CI/CD integration | ✅ Works standalone              |
+| 📁 Rigid baseline workflow   | ✅ Baselines + ad-hoc comparison |
+| ☁️ SaaS with accounts        | ✅ Runs entirely in browser      |
+| ⏳ Complex setup             | ✅ Install and go                |
 
 **Use cases:**
 - Did deployment break anything?
@@ -70,10 +70,11 @@ GUI provides sensible defaults. Power users can script everything:
 | **Account required**         | 🟢 No               | 🔴 Yes              | 🟢 No               | 🟢 No               |
 | **Works offline**            | 🟢 Yes              | 🔴 No               | 🟢 Yes              | 🟢 Yes              |
 | **Ad-hoc comparisons**       | 🟢 Any two captures | 🔴 Baseline only    | 🔴 Baseline only    | 🔴 Baseline only    |
+| **Flexible baselines**       | 🟢 Capture + URL    | 🟡 Build-level      | 🟡 CLI update       | 🟡 CLI update       |
 | **Beyond screenshots**       | 🟢 HTML + headers   | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
 | **Auth / cookies scripting** | 🟢 Yes              | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
 | **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
-| **Baseline management**      | 🟢 Capture + URL    | 🟢 Build-level      | 🟢 CLI update       | 🟢 CLI update       |
+
 | **Team collaboration**       | 🔴 Local only       | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
 
 ### When to use Comparador
@@ -103,22 +104,24 @@ Comparador works alongside CI/CD tools. Use it for:
 
 ## Baseline & Approval Workflow
 
-Comparador provides a structured approval workflow for managing baselines at two levels of granularity:
+Unlike traditional VRT tools that force a single baseline model, Comparador lets you **compare any two captures** while also supporting structured baselines when you need them.
 
-| Level       | Scope                           | Action                                       |
-| ----------- | ------------------------------- | -------------------------------------------- |
-| **Capture** | All URLs in a capture session   | Approve entire capture as the group baseline |
-| **URL**     | Individual URL within a capture | Override a single URL baseline independently |
+### How it works
 
-**Workflow:**
+1. **Capture** a group of URLs
+2. **Compare** against any previous capture — or let Comparador auto-select the baseline
+3. **Accept** or **Reject** — captures and individual URLs get status badges
+4. The newest accepted capture becomes the **automatic baseline** for future comparisons
+5. **Pin** a specific capture or URL as a manual baseline when you need to override
 
-1. **Capture** a group of URLs (batch capture)
-2. **Review** the capture — inspect screenshots, HTML, headers
-3. **Approve** the capture to set it as the baseline for the group
-4. **Next capture** — compare against the approved baseline automatically
-5. **Override** individual URL baselines when only specific pages changed intentionally
+### Two levels of control
 
-Approved captures and attempts are indicated with green badges throughout the UI. The Compare view auto-selects the baseline capture for comparison.
+| Level       | Scope                         | Use case                                                  |
+| ----------- | ----------------------------- | --------------------------------------------------------- |
+| **Capture** | All URLs in a capture session | Approve an entire deployment snapshot as the new baseline |
+| **URL**     | Individual URL                | Pin a specific page version when only that page changed   |
+
+Baselines are **optional** — you can always pick any two captures for ad-hoc comparison. The approval workflow adds structure when your team needs it.
 
 ---
 
@@ -139,15 +142,15 @@ Approved captures and attempts are indicated with green badges throughout the UI
 | ![Swipe](assets/screenshots/compare-2-screenshots-2.png) | ![HTML Diff](assets/screenshots/compare-3-html.png) |
 |           Drag the red line to reveal changes            |           Side-by-side source comparison            |
 
-|                        Scripts                         |                        Popup                        |
-| :----------------------------------------------------: | :-------------------------------------------------: |
-| ![Scripts](assets/screenshots/customize-3-scripts.png) | ![Popup](assets/screenshots/popup-1-navigation.png) |
-|            Browser, page, setup, navigation            |         Quick capture & environment switch          |
+|                     Response Headers Diff                     |                        Popup                        |
+| :-----------------------------------------------------------: | :-------------------------------------------------: |
+| ![Headers](assets/screenshots/compare-4-response-headers.png) | ![Popup](assets/screenshots/popup-1-navigation.png) |
+|             Compare cache, CDN, security headers              |         Quick capture & environment switch          |
 
-|                        Settings                         |
-| :-----------------------------------------------------: |
-| ![Settings](assets/screenshots/customize-1-project.png) |
-|                Per-project configuration                |
+|                        Scripts                         |                        Settings                         |
+| :----------------------------------------------------: | :-----------------------------------------------------: |
+| ![Scripts](assets/screenshots/customize-3-scripts.png) | ![Settings](assets/screenshots/customize-1-project.png) |
+|            Browser, page, setup, navigation            |                Per-project configuration                |
 
 ---
 
