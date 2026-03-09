@@ -132,25 +132,30 @@ Baselines are **optional** — you can always pick any two captures for ad-hoc c
 | ![Dashboard](assets/screenshots/organize-0-dashboard.png) | ![Capture](assets/screenshots/capture-pages-1.png) |
 |                  Projects, groups, URLs                   |            Batch capture with progress             |
 
-|                  Compare Captures                  |                      Compare: Side by Side                      |
-| :------------------------------------------------: | :-------------------------------------------------------------: |
-| ![Compare](assets/screenshots/compare-1-batch.png) | ![Side by Side](assets/screenshots/compare-2-screenshots-1.png) |
-|           Select two captures to compare           |                 Differences highlighted in pink                 |
+|              Review Captures               |                      Compare: Side by Side                      |
+| :----------------------------------------: | :-------------------------------------------------------------: |
+| ![Review](assets/screenshots/review-1.png) | ![Side by Side](assets/screenshots/compare-2-screenshots-1.png) |
+|   Accept or reject captures and attempts   |                 Differences highlighted in pink                 |
 
-|                   Compare: Swipe View                    |                      HTML Diff                      |
-| :------------------------------------------------------: | :-------------------------------------------------: |
-| ![Swipe](assets/screenshots/compare-2-screenshots-2.png) | ![HTML Diff](assets/screenshots/compare-3-html.png) |
-|           Drag the red line to reveal changes            |           Side-by-side source comparison            |
+|                   Compare: Swipe View                    |                    Compare: Accepted                     |
+| :------------------------------------------------------: | :------------------------------------------------------: |
+| ![Swipe](assets/screenshots/compare-2-screenshots-2.png) | ![Accepted](assets/screenshots/compare-5-accepted-1.png) |
+|           Drag the red line to reveal changes            |            Approved baseline with visual diff            |
 
-|                     Response Headers Diff                     |                        Popup                        |
-| :-----------------------------------------------------------: | :-------------------------------------------------: |
-| ![Headers](assets/screenshots/compare-4-response-headers.png) | ![Popup](assets/screenshots/popup-1-navigation.png) |
-|             Compare cache, CDN, security headers              |         Quick capture & environment switch          |
+|                      HTML Diff                      |                     Response Headers Diff                     |
+| :-------------------------------------------------: | :-----------------------------------------------------------: |
+| ![HTML Diff](assets/screenshots/compare-3-html.png) | ![Headers](assets/screenshots/compare-4-response-headers.png) |
+|           Side-by-side source comparison            |             Compare cache, CDN, security headers              |
 
 |                        Scripts                         |                        Settings                         |
 | :----------------------------------------------------: | :-----------------------------------------------------: |
 | ![Scripts](assets/screenshots/customize-3-scripts.png) | ![Settings](assets/screenshots/customize-1-project.png) |
 |            Browser, page, setup, navigation            |                Per-project configuration                |
+
+|                        Popup                        |                  Help                  |
+| :-------------------------------------------------: | :------------------------------------: |
+| ![Popup](assets/screenshots/popup-1-navigation.png) | ![Help](assets/screenshots/help-1.png) |
+|         Quick capture & environment switch          |   Keyboard shortcuts & documentation   |
 
 ---
 
