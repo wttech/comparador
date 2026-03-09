@@ -44,6 +44,7 @@ No pipelines. No accounts. No external servers.
 | 📸 **Visual Diff**   | Full-page screenshots with pixel-level comparison, mismatch %, multiple view modes |
 | 📄 **HTML Diff**     | Side-by-side source comparison with syntax highlighting                            |
 | 📋 **Headers Diff**  | Compare response headers (cache, CDN, security)                                    |
+| ✅ **Baselines**     | Accept/reject workflow with automatic + manual baseline control                    |
 | 🚀 **Batch Capture** | Capture projects or groups of URLs, compare across environments                    |
 | ⚡ **Popup**         | Quick environment switching + fast access to frequently tested pages               |
 
@@ -72,7 +73,7 @@ GUI provides sensible defaults. Power users can script everything:
 | **Beyond screenshots**       | 🟢 HTML + headers   | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
 | **Auth / cookies scripting** | 🟢 Yes              | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
 | **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
-| **Baseline management**      | 🟡 Manual           | 🟢 Automatic        | 🟢 Automatic        | 🟢 Automatic        |
+| **Baseline management**      | 🟢 Capture + URL    | 🟢 Build-level      | 🟢 CLI update       | 🟢 CLI update       |
 | **Team collaboration**       | 🔴 Local only       | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
 
 ### When to use Comparador
@@ -97,6 +98,27 @@ Comparador works alongside CI/CD tools. Use it for:
 - Testing environments not in your pipeline
 - Quick checks before committing
 - Investigating customer-reported visual issues
+
+---
+
+## Baseline & Approval Workflow
+
+Comparador provides a structured approval workflow for managing baselines at two levels of granularity:
+
+| Level       | Scope                           | Action                                       |
+| ----------- | ------------------------------- | -------------------------------------------- |
+| **Capture** | All URLs in a capture session   | Approve entire capture as the group baseline |
+| **URL**     | Individual URL within a capture | Override a single URL baseline independently |
+
+**Workflow:**
+
+1. **Capture** a group of URLs (batch capture)
+2. **Review** the capture — inspect screenshots, HTML, headers
+3. **Approve** the capture to set it as the baseline for the group
+4. **Next capture** — compare against the approved baseline automatically
+5. **Override** individual URL baselines when only specific pages changed intentionally
+
+Approved captures and attempts are indicated with green badges throughout the UI. The Compare view auto-selects the baseline capture for comparison.
 
 ---
 
