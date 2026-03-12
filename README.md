@@ -59,6 +59,16 @@ GUI provides sensible defaults. Power users can script everything:
 | **Navigation Script** | Custom environment switcher in popup                   |
 | **Setup Script**      | Auto-generate URLs (envs × paths matrix, sitemap, API) |
 
+### 🤝 Team Collaboration
+
+Share project configurations and test data with your team via **import/export**:
+
+- **Export** a project (URLs, settings, scripts) as a portable JSON file
+- **Import** on another machine — same setup, zero manual work
+- **Backup & restore** full project data including captures and screenshots
+
+No cloud account needed — share files however your team prefers (Slack, email, Git, shared drive).
+
 ---
 
 ## Comparador vs Alternatives
@@ -74,7 +84,7 @@ GUI provides sensible defaults. Power users can script everything:
 | **Beyond screenshots**       | 🟢 HTML + headers   | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
 | **Auth / cookies scripting** | 🟢 Yes              | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
 | **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
-| **Team collaboration**       | 🔴 Local only       | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
+| **Team collaboration**       | 🟡 Import/export    | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
 
 ### When to use Comparador
 
