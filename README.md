@@ -39,14 +39,15 @@ No pipelines. No accounts. No external servers.
 
 ## Key Features
 
-| Feature             | Description                                                                        |
-| ------------------- | ---------------------------------------------------------------------------------- |
-| 📸 **Visual Diff**   | Full-page screenshots with pixel-level comparison, mismatch %, multiple view modes |
-| 📄 **HTML Diff**     | Side-by-side source comparison with syntax highlighting                            |
-| 📋 **Headers Diff**  | Compare response headers (cache, CDN, security)                                    |
-| ✅ **Baselines**     | Accept/reject workflow with automatic + manual baseline control                    |
-| 🚀 **Batch Capture** | Capture projects or groups of URLs, compare across environments                    |
-| ⚡ **Popup**         | Quick environment switching + fast access to frequently tested pages               |
+| Feature             | Description                                                                               |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| 📸 **Visual Diff**   | Full-page screenshots with pixel-level comparison, mismatch %, multiple view modes        |
+| 📄 **HTML Diff**     | Side-by-side source comparison with syntax highlighting                                   |
+| 📋 **Headers Diff**  | Compare response headers (cache, CDN, security)                                           |
+| ✅ **Baselines**     | Accept/reject workflow, auto + manual baseline pinning, compare any two captures          |
+| 🚀 **Batch Capture** | Capture projects or groups of URLs, compare across environments                           |
+| ⚡ **Popup**         | Quick environment switching + fast access to frequently tested pages                      |
+| 📖 **Built-in Help** | Guides on baselines, scripting, keyboard shortcuts, and more — right inside the extension |
 
 ### 🔧 Scriptable & Extensible
 
@@ -108,29 +109,6 @@ Comparador works alongside CI/CD tools. Use it for:
 - Testing environments not in your pipeline
 - Quick checks before committing
 - Investigating customer-reported visual issues
-
----
-
-## Baseline & Approval Workflow
-
-Unlike traditional VRT tools that force a single baseline model, Comparador lets you **compare any two captures** while also supporting structured baselines when you need them.
-
-### How it works
-
-1. **Capture** a group of URLs
-2. **Compare** against any previous capture — or let Comparador auto-select the baseline
-3. **Accept** or **Reject** — captures and individual URLs get status badges
-4. The newest accepted capture becomes the **automatic baseline** for future comparisons
-5. **Pin** a specific capture or URL as a manual baseline when you need to override
-
-### Two levels of control
-
-| Level       | Scope                         | Use case                                                  |
-| ----------- | ----------------------------- | --------------------------------------------------------- |
-| **Capture** | All URLs in a capture session | Approve an entire deployment snapshot as the new baseline |
-| **URL**     | Individual URL                | Pin a specific page version when only that page changed   |
-
-Baselines are **optional** — you can always pick any two captures for ad-hoc comparison. The approval workflow adds structure when your team needs it.
 
 ---
 
