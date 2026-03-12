@@ -74,7 +74,6 @@ GUI provides sensible defaults. Power users can script everything:
 | **Beyond screenshots**       | 🟢 HTML + headers   | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
 | **Auth / cookies scripting** | 🟢 Yes              | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
 | **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
-
 | **Team collaboration**       | 🔴 Local only       | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
 
 ### When to use Comparador
@@ -163,7 +162,7 @@ Baselines are **optional** — you can always pick any two captures for ad-hoc c
 
 ### Chrome Web Store (Recommended)
 
-Install directly from the [Chrome Web Store](https://chrome.google.com/webstore/detail/comparador).
+Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/ocfpngpgnhjcpnolhjkpfanhgoalbbhd).
 
 ### From Release (Manual)
 
