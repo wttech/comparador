@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.2.0
+
+- Automatic comparison — captures compared against baselines with per-type thresholds
+- Auto-accept — identical captures auto-accepted, cascading to parent capture
+- Compare script — user-defined normalization before comparison
+- Comparison badges — inline diff status on captures and attempts
+- Review page — status filter, bulk accept/reject
+- Database wipe & storage stats on settings page
+- Configurable page readiness — waitUntil lifecycle (load, networkAlmostIdle, networkIdle)
+- Capture hardening — tab-based capture avoids window flash on Windows
+- Enhanced page script — broader coverage of noisy elements
+- Clear with baseline preservation
+- Pixelmatch as the only screenshot comparison engine
+- Bug fixes and stability improvements
+
 ## 1.1.0
 
 - Baseline & review workflow — accept/reject captures and individual URLs, automatic + manual baseline pinning

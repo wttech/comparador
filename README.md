@@ -39,26 +39,28 @@ No pipelines. No accounts. No external servers.
 
 ## Key Features
 
-| Feature             | Description                                                                               |
-| ------------------- | ----------------------------------------------------------------------------------------- |
-| 📸 **Visual Diff**   | Full-page screenshots with pixel-level comparison, mismatch %, multiple view modes        |
-| 📄 **HTML Diff**     | Side-by-side source comparison with syntax highlighting                                   |
-| 📋 **Headers Diff**  | Compare response headers (cache, CDN, security)                                           |
-| ✅ **Baselines**     | Accept/reject workflow, auto + manual baseline pinning, compare any two captures          |
-| 🚀 **Batch Capture** | Capture projects or groups of URLs, compare across environments                           |
-| ⚡ **Popup**         | Quick environment switching + fast access to frequently tested pages                      |
-| 📖 **Built-in Help** | Guides on baselines, scripting, keyboard shortcuts, and more — right inside the extension |
+| Feature              | Description                                                                               |
+| -------------------- | ----------------------------------------------------------------------------------------- |
+| 📸 **Visual Diff**    | Full-page screenshots with pixel-level comparison, mismatch %, multiple view modes        |
+| 📄 **HTML Diff**      | Side-by-side source comparison with syntax highlighting                                   |
+| 📋 **Headers Diff**   | Compare response headers (cache, CDN, security)                                           |
+| ✅ **Baselines**      | Accept/reject workflow, auto + manual baseline pinning, compare any two captures          |
+| 🔄 **Auto Compare**   | Automatic comparison against baselines after capture, configurable thresholds, auto-accept |
+| 🚀 **Batch Capture**  | Capture projects or groups of URLs, compare across environments                           |
+| ⚡ **Popup**          | Quick environment switching + fast access to frequently tested pages                      |
+| 📖 **Built-in Help**  | Guides on baselines, scripting, keyboard shortcuts, and more — right inside the extension |
 
 ### 🔧 Scriptable & Extensible
 
 GUI provides sensible defaults. Power users can script everything:
 
-| Script                | Purpose                                                |
-| --------------------- | ------------------------------------------------------ |
-| **Browser Script**    | Auth headers, cookies, blocked URLs, user-agent        |
-| **Page Script**       | Hide cookie banners, wait for animations               |
-| **Navigation Script** | Custom environment switcher in popup                   |
-| **Setup Script**      | Auto-generate URLs (envs × paths matrix, sitemap, API) |
+| Script                | Purpose                                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| **Browser Script**    | Auth headers, cookies, blocked URLs, user-agent                  |
+| **Page Script**       | Hide cookie banners, wait for animations                         |
+| **Compare Script**    | Normalize HTML/headers before comparison (remove analytics, CDN) |
+| **Navigation Script** | Custom environment switcher in popup                             |
+| **Setup Script**      | Auto-generate URLs (envs × paths matrix, sitemap, API)           |
 
 ### 🤝 Team Collaboration
 
@@ -170,6 +172,7 @@ Install directly from the [Chrome Web Store](https://chromewebstore.google.com/d
 | `tabs`             | Create/manage tabs for batch capture                                   |
 | `debugger`         | Chrome DevTools Protocol for full-page screenshots and HTML extraction |
 | `webRequest`       | Intercept response headers for comparison                              |
+| `offscreen`        | Run user-configured compare scripts in an isolated sandbox. Chrome's Content Security Policy prevents dynamic script evaluation in extension pages and service workers; the offscreen document provides a CSP-sandboxed iframe where compare scripts safely preprocess captured HTML and response headers before comparison. Only created when automatic comparison runs after a capture. |
 | `host_permissions` | Capture pages from any website                                         |
 
 **Privacy:** All data stored locally. Nothing sent to external servers. See [PRIVACY_POLICY.md](PRIVACY_POLICY.md).

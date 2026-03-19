@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last updated:** January 23, 2026
+**Last updated:** March 18, 2026
 
 ## Overview
 
@@ -42,13 +42,14 @@ Captures run in a separate browser window. Incognito mode can be enabled per pro
 
 Comparador requires the following Chrome permissions to function:
 
-| Permission                     | Purpose                                                                                    |
-| ------------------------------ | ------------------------------------------------------------------------------------------ |
-| `activeTab`                    | Access the currently active tab to capture its URL and content when you initiate a capture |
-| `tabs`                         | Create, update, and manage browser tabs for batch capture operations and navigation        |
-| `debugger`                     | Use Chrome DevTools Protocol to capture full-page screenshots and extract complete HTML source. Only activated when you explicitly trigger a capture. |
-| `webRequest`                   | Intercept HTTP response headers to include them in capture comparisons                     |
-| `host_permissions: <all_urls>` | Required to capture pages from any website. Comparador is a developer tool for comparing arbitrary URLs across environments (dev, staging, production), so it cannot be limited to specific domains. No data is collected or transmitted — all captures remain local. |
+| Permission                     | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `activeTab`                    | Access the currently active tab to capture its URL and content when you initiate a capture                                                                                                                                                                                                                                                                                                                                                                      |
+| `tabs`                         | Create, update, and manage browser tabs for batch capture operations and navigation                                                                                                                                                                                                                                                                                                                                                                             |
+| `debugger`                     | Use Chrome DevTools Protocol to capture full-page screenshots and extract complete HTML source. Only activated when you explicitly trigger a capture.                                                                                                                                                                                                                                                                                                           |
+| `webRequest`                   | Intercept HTTP response headers to include them in capture comparisons                                                                                                                                                                                                                                                                                                                                                                                          |
+| `offscreen`                    | Create a hidden offscreen document to run user-configured compare scripts in a CSP-sandboxed iframe. Chrome's Content Security Policy prevents dynamic script evaluation in extension pages and service workers. The offscreen document hosts a sandboxed iframe where compare scripts safely preprocess captured HTML and response headers before comparison. Only created when automatic comparison runs after a capture — no persistent background activity. |
+| `host_permissions: <all_urls>` | Required to capture pages from any website. Comparador is a developer tool for comparing arbitrary URLs across environments (dev, staging, production), so it cannot be limited to specific domains. No data is collected or transmitted — all captures remain local.                                                                                                                                                                                           |
 
 ## User Control
 
@@ -58,7 +59,7 @@ All extension behavior is **user-initiated** and **explicitly configured**:
 - **You configure browser context** — Headers, cookies, user agent, incognito mode — all opt-in via project settings
 - **You control storage** — Delete individual captures, entire projects, or uninstall to remove all data
 - **No background activity** — The extension does not run, monitor, or collect anything unless you actively use it
-- **No hidden behavior** — Every action is triggered by explicit user interaction; nothing happens automatically
+- **No hidden behavior** — Every action is triggered by explicit user interaction. After a user-initiated capture, the extension may automatically compare the result against the baseline locally — this is a configurable per-project setting and involves no network requests beyond the original capture
 
 ## Data Storage
 
