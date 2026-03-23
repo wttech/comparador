@@ -4,15 +4,16 @@
 
 - Automatic comparison — captures compared against baselines with per-type thresholds
 - Auto-accept — identical captures auto-accepted, cascading to parent capture
-- Compare script — user-defined normalization before comparison
+- Compare script — configurable normalization for selectors, script filters, headers and regex replace patterns
+- Script context & built-in defaults — page and compare scripts receive `comparador` (auto-upgrading defaults) and `project` (per-project variables) globals
 - Comparison badges — inline diff status on captures and attempts
 - Review page — status filter, bulk accept/reject
-- Database wipe & storage stats on settings page
+- Enhanced page script — font smoothing freeze, deep-merge config from project variables
 - Configurable page readiness — waitUntil lifecycle (load, networkAlmostIdle, networkIdle)
 - Capture hardening — tab-based capture avoids window flash on Windows
-- Enhanced page script — broader coverage of noisy elements
 - Clear with baseline preservation
-- Pixelmatch as the only screenshot comparison engine
+- Database wipe & storage stats on settings page
+- Help rewrite — new Automation chapter covering all five scripts and variables
 - Bug fixes and stability improvements
 
 ## 1.1.0

@@ -76,7 +76,7 @@ Comparador does **not** integrate with any third-party analytics, tracking, or d
 
 The extension is designed to run entirely locally without fetching external code.
 
-In rare cases, a third-party dependency may unintentionally load external assets like CSS/JS (e.g., highlight.js loading theme stylesheets from a CDN). If such behavior is discovered, the maintainers will address it by bundling the resource locally in a subsequent release.
+If a third-party dependency is found to unintentionally load external assets (e.g., CSS or JS from a CDN), the maintainers will address it by bundling the resource locally in a subsequent release.
 
 ## Network Requests
 
