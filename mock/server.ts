@@ -39,7 +39,8 @@ browserSync.init({
                 const host = req.headers.host || defaultEnv.host;
                 const env = hostToEnv[host] || defaultEnv;
 
-                const route = routes[req.url || '/'];
+                const pathname = (req.url || '/').split('?')[0];
+                const route = routes[pathname];
 
                 if (route) {
                     consola.info(`${host}${req.url}`);

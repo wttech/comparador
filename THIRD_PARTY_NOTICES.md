@@ -77,6 +77,7 @@ Comparador uses the following open-source libraries:
 | @types/geojson                     | MIT                       |
 | @types/prop-types                  | MIT                       |
 | @types/react                       | MIT                       |
+| @upsetjs/venn.js                   | MIT                       |
 | abbrev                             | ISC                       |
 | acorn                              | MIT                       |
 | antd                               | MIT                       |
@@ -209,7 +210,6 @@ Comparador uses the following open-source libraries:
 | react-router                       | MIT                       |
 | react-router-dom                   | MIT                       |
 | readable-stream                    | MIT                       |
-| resemblejs                         | MIT                       |
 | resize-observer-polyfill           | MIT                       |
 | robust-predicates                  | Unlicense                 |
 | roughjs                            | MIT                       |
