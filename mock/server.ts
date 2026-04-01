@@ -64,6 +64,7 @@ browserSync.init({
                     });
 
                     res.setHeader('Content-Type', 'text/html; charset=utf-8');
+                    res.setHeader('Cache-Control', 'no-store');
                     if (affected) {
                         res.setHeader('X-Variant', variant.id);
                         const headers = variant.responseHeaders;

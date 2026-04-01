@@ -12,7 +12,6 @@ export const variants: Record<string, Variant> = {
         label: 'Baseline',
         envOverrides: {},
         responseHeaders: {
-            'Cache-Control': 'public, max-age=3600',
             'X-CDN-Cache': 'HIT',
             'X-Frame-Options': 'DENY',
         },
@@ -27,7 +26,6 @@ export const variants: Record<string, Variant> = {
             satisfaction: 97,
         },
         responseHeaders: {
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
             'X-CDN-Cache': 'MISS',
             'X-Frame-Options': 'SAMEORIGIN',
             'X-Debug': 'true',
