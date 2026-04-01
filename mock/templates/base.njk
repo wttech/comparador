@@ -106,6 +106,12 @@
 
     {% block content %}{% endblock %}
 
+    {% if variant and variant.announcement and page == 'home' %}
+    <div class="bg-warning text-dark text-center py-2 fw-bold">
+        {{ variant.announcement }}
+    </div>
+    {% endif %}
+
     <footer class="text-light py-4 mt-5">
         <div class="container text-center">
             <p class="mb-0">© 2026 Acme Corp. All rights reserved.</p>

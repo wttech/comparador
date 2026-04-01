@@ -4,8 +4,14 @@ import nunjucks from 'nunjucks';
 import path from 'path';
 import type { IncomingMessage, ServerResponse } from 'http';
 
-import { environments, hostToEnv, routes, serverConfig, team } from './config';
+import { environments, hostToEnv, resolveVariant, routes, serverConfig, team, variants } from './config';
 import { certsExist } from './generate-certs';
+
+const defaultVariant = process.env.VARIANT || undefined;
+if (defaultVariant && !variants[defaultVariant]) {
+    consola.error(`Unknown variant '${defaultVariant}'. Available: ${Object.keys(variants).join(', ')}`);
+    process.exit(1);
+}
 
 const browserSync = browserSyncModule.create();
 const rootDir = path.join(__dirname, '..');
@@ -37,21 +43,34 @@ browserSync.init({
         middleware: [
             function (req: IncomingMessage, res: ServerResponse, next: () => void) {
                 const host = req.headers.host || defaultEnv.host;
-                const env = hostToEnv[host] || defaultEnv;
+                const baseEnv = hostToEnv[host] || defaultEnv;
 
-                const pathname = (req.url || '/').split('?')[0];
+                const fullUrl = req.url || '/';
+                const [pathname, queryString] = fullUrl.split('?');
                 const route = routes[pathname];
 
                 if (route) {
-                    consola.info(`${host}${req.url}`);
+                    const variant = resolveVariant(queryString, req.headers, req.headers.cookie, defaultVariant);
+                    const affected = !variant.affectedPages || variant.affectedPages.includes(route.page);
+                    const env = affected ? { ...baseEnv, ...variant.envOverrides } : baseEnv;
+
+                    consola.info(`${host}${fullUrl} [variant=${variant.id}]`);
 
                     const html = nunjucks.render(route.template, {
                         env,
                         page: route.page,
                         team,
+                        variant: affected ? variant : undefined,
                     });
 
                     res.setHeader('Content-Type', 'text/html; charset=utf-8');
+                    if (affected) {
+                        res.setHeader('X-Variant', variant.id);
+                        const headers = variant.responseHeaders;
+                        for (const key of Object.keys(headers)) {
+                            res.setHeader(key, headers[key]);
+                        }
+                    }
                     res.end(html);
                     return;
                 }
@@ -66,10 +85,16 @@ browserSync.init({
                 .map(e => `https://${e.host} (${e.name})`)
                 .join('\n');
             const routeList = Object.keys(routes).join(', ');
+            const variantList = Object.values(variants)
+                .map(v => `${v.id} — ${v.label}`)
+                .join(', ');
+            const variantNote = defaultVariant
+                ? `Default: ${defaultVariant} (override with ?v=a, X-Variant, or cookie)`
+                : `${variantList}\nUsage: ?v=b  |  X-Variant: b  |  cookie variant=b  |  VARIANT=b npm start`;
 
             consola.box({
                 title: 'Comparador Mock Server',
-                message: `${envList}\n\nPages: ${routeList}`,
+                message: `${envList}\n\nPages: ${routeList}\nVariants: ${variantNote}`,
                 style: { borderColor: 'cyan' },
             });
         },

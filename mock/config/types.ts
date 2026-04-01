@@ -23,3 +23,12 @@ export interface TeamMember {
     name: string;
     role: string;
 }
+
+export interface Variant {
+    id: string;
+    label: string;
+    envOverrides: Partial<Environment>;
+    responseHeaders: Record<string, string>;
+    affectedPages?: string[];
+    announcement?: string;
+}

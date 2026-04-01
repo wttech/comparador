@@ -5,7 +5,8 @@
     "scripts": {
         "build": "tsc",
         "setup": "tsc && node dist/setup.js",
-        "start": "tsc && node dist/server.js"
+        "start": "tsc && node dist/server.js",
+        "start:b": "tsc && VARIANT=b node dist/server.js"
     },
     "dependencies": {
         "browser-sync": "^3.0.4",
