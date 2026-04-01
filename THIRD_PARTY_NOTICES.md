@@ -159,6 +159,7 @@ Comparador uses the following open-source libraries:
 | dexie-react-hooks                      | Apache-2.0                |
 | diff                                   | BSD-3-Clause              |
 | dompurify                              | (MPL-2.0 OR Apache-2.0)   |
+| fflate                                 | MIT                       |
 | hachure-fill                           | MIT                       |
 | iconv-lite                             | MIT                       |
 | immediate                              | MIT                       |
