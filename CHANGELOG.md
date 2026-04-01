@@ -19,6 +19,9 @@
 - Clear with baseline preservation, database wipe & storage stats
 - Switched from Monaco Editor to CodeMirror for a lighter bundle and snappier diffs
 - Updated help with a new Automation chapter covering all five scripts and variables
+- Compressed backups — smaller export files, faster backup & restore
+- Hardened backup & restore — large file support, interactive modals with progress tracking, tab-close prevention
+- Faster navigation in comparison views due to optimized data loading and rendering
 - Bug fixes and stability improvements
 
 ## 1.1.0
