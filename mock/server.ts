@@ -4,7 +4,7 @@ import nunjucks from 'nunjucks';
 import path from 'path';
 import type { IncomingMessage, ServerResponse } from 'http';
 
-import { environments, hostToEnv, resolveVariant, routes, serverConfig, team, variants } from './config';
+import { environments, hostToEnv, resolveVariant, routes, serverConfig, team, variantDefault, variants } from './config';
 import { certsExist } from './generate-certs';
 
 const defaultVariant = process.env.VARIANT || undefined;
@@ -86,12 +86,11 @@ browserSync.init({
                 .map(e => `https://${e.host} (${e.name})`)
                 .join('\n');
             const routeList = Object.keys(routes).join(', ');
+            const activeVariant = defaultVariant || variantDefault;
             const variantList = Object.values(variants)
-                .map(v => `${v.id} — ${v.label}`)
+                .map(v => `${v.id === activeVariant ? '▶' : ' '} ${v.id} — ${v.label}`)
                 .join(', ');
-            const variantNote = defaultVariant
-                ? `Default: ${defaultVariant} (override with ?v=a, X-Variant, or cookie)`
-                : `${variantList}\nUsage: ?v=b  |  X-Variant: b  |  cookie variant=b  |  VARIANT=b npm start`;
+            const variantNote = `${variantList}\nSwitch: ?v=b  |  X-Variant: b  |  cookie variant=b  |  VARIANT=b npm start`;
 
             consola.box({
                 title: 'Comparador Mock Server',
