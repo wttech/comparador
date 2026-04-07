@@ -11,6 +11,7 @@ Thumbs.db
 # Generated files
 dist/
 build/
+assets/screenshots/.webstore/
 *.log
 *.tmp
 .vscode/

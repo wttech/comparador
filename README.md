@@ -32,7 +32,7 @@ No pipelines. No accounts. No external servers.
 **Use cases:**
 - Did deployment break anything?
 - Is staging identical to production?
-- What exactly changed — layout, HTML, headers?
+- What exactly changed — layout, HTML, headers, console logs, performance?
 - Track visual changes over time
 
 ---
@@ -44,6 +44,8 @@ No pipelines. No accounts. No external servers.
 | 📸 **Visual Diff**   | Full-page screenshots with pixel-level comparison, mismatch %, multiple view modes         |
 | 📄 **HTML Diff**     | Side-by-side source comparison with syntax highlighting                                    |
 | 📋 **Headers Diff**  | Compare response headers (cache, CDN, security)                                            |
+| 🪵 **Logs Diff**     | Compare console logs and browser messages — spot new errors, warnings, count changes       |
+| 📊 **Metrics Diff**  | Compare performance metrics (TTFB, DOM load, resources) with threshold-based verdicts      |
 | ✅ **Baselines**     | Accept/reject workflow, auto + manual baseline pinning, compare any two captures           |
 | 🔄 **Auto Compare**  | Automatic comparison against baselines after capture, configurable thresholds, auto-accept |
 | 🚀 **Batch Capture** | Capture projects or groups of URLs, compare across environments                            |
@@ -58,7 +60,7 @@ GUI provides sensible defaults. Power users can script everything:
 | --------------------- | ---------------------------------------------------------------- |
 | **Browser Script**    | Auth headers, cookies, blocked URLs, user-agent                  |
 | **Page Script**       | Hide cookie banners, wait for animations                         |
-| **Compare Script**    | Normalize HTML/headers before comparison (remove analytics, CDN) |
+| **Compare Script**    | Normalize HTML/headers/logs/metrics before comparison                     |
 | **Navigation Script** | Custom environment switcher in popup                             |
 | **Setup Script**      | Auto-generate URLs (envs × paths matrix, sitemap, API)           |
 
@@ -84,7 +86,7 @@ No cloud account needed — share files however your team prefers (Slack, email,
 | **Works offline**            | 🟢 Yes              | 🔴 No               | 🟢 Yes              | 🟢 Yes              |
 | **Ad-hoc comparisons**       | 🟢 Any two captures | 🔴 Baseline only    | 🔴 Baseline only    | 🔴 Baseline only    |
 | **Flexible baselines**       | 🟢 Capture + URL    | 🟡 Build-level      | 🟡 CLI update       | 🟡 CLI update       |
-| **Beyond screenshots**       | 🟢 HTML + headers   | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
+| **Beyond screenshots**       | 🟢 HTML + headers + logs + metrics | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
 | **Auth / cookies scripting** | 🟢 Yes              | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
 | **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
 | **Team collaboration**       | 🟡 Import/export    | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |

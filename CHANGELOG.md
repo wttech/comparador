@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.3.0
+
+- **Logs diff** — five diff tabs now: screenshots, HTML, headers, console logs, and performance metrics. Logs are grouped by message and severity — see new errors appear, old ones vanish, or counts shift
+- **Metrics diff** — track 20 performance indicators (TTFB, DOM load, JS heap, resources, layout) with threshold-based verdicts and delta tracking
+- **Per-type verdict control** — include or exclude any diff tab from the overall verdict independently — disable noisy channels without losing visibility
+- **Worsened-only mode** — metrics verdict triggers only on regressions, not improvements (default, switchable to any-change)
+- **Compare script for all types** — the compare script now normalizes all five data types: HTML, headers, logs, metrics, screenshots
+- **Consistent ignore patterns** — `ignoreKeys`, `ignorePatterns`, and `remove` all support exact strings and `{ regex: "..." }` objects
+- **Smart metric defaults** — volatile metrics (JS heap, layout counters, timing, resources) ignored by default for stable parallel-capture comparisons
+- **Restructured compare variables** — `compare` section uses clean subkeys (`html`, `headers`, `logs`, `metrics`) for all diff types
+- **JSON5 validation** — variables editor validates syntax in real time with inline error markers
+- Comparison data stored separately from metadata for faster list views
+- Configurable per-metric thresholds with `deltaMax` and `percentMax` overrides
+
 ## 1.2.0
 
 - **Automatic comparison** — every capture is instantly diffed against its baseline across screenshots, HTML, and headers with configurable thresholds
