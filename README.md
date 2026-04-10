@@ -8,6 +8,8 @@
 </p>
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/ocfpngpgnhjcpnolhjkpfanhgoalbbhd"><img src="https://img.shields.io/badge/Install_Free-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Install from Chrome Web Store"></a>
+  <br>
   <a href="https://chromewebstore.google.com/detail/ocfpngpgnhjcpnolhjkpfanhgoalbbhd"><img src="https://img.shields.io/chrome-web-store/v/ocfpngpgnhjcpnolhjkpfanhgoalbbhd?label=Chrome%20Web%20Store" alt="Chrome Web Store"></a>
 </p>
 
