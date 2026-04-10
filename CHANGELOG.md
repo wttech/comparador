@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.1
+
+- **Compare baseline with previous** — when the latest capture is already the baseline, compare automatically diffs it against the prior version
+- **Eager loading** — page script strips `loading="lazy"` before scrolling to prevent cancelled fetches in background tabs (`prepare.eager`, on by default)
+- Unified comparison logic across all compare buttons
+- Bug fixes and stability improvements
+
 ## 1.3.0
 
 - **Logs diff** — five diff tabs now: screenshots, HTML, headers, console logs, and performance metrics. Logs are grouped by message and severity — see new errors appear, old ones vanish, or counts shift
