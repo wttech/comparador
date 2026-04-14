@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.2
+
+- **Faster diff view** — new fast engine is now the default for HTML and headers diffs, dramatically improving rendering speed; rich engine available as an experimental alternative for character-level highlighting
+- **Syntax highlighting for headers diff** — HTTP response headers now have color-coded header names and values in the diff view
+- **Searchable compare selectors** — capture and attempt dropdowns now include a search input with contextual hints for quick filtering
+- Upgraded core UI framework and dependencies
+- Bug fixes, performance improvements, and UI polish
+
 ## 1.3.1
 
 - **Compare baseline with previous** — when the latest capture is already the baseline, compare automatically diffs it against the prior version
