@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.3.2
+## 1.3.4
 
 - **Faster diff view** — new fast engine is now the default for HTML and headers diffs, dramatically improving rendering speed; rich engine available as an experimental alternative for character-level highlighting
 - **Syntax highlighting for headers diff** — HTTP response headers now have color-coded header names and values in the diff view
