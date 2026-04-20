@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.5
+
+- **Context-gated review** — accept/reject buttons only appear when the current entity is newer than the baseline, preventing accidental review of historical data
+- **State reason tracking** — auto-accepted items now show why they were accepted (first capture, identical content, or promoted), visible in badge tooltips
+- **Smarter capture thumbnails** — preview attempts follow URL display order with baseline-aware fallback
+- **Overflow-safe select tags** — long project/group/URL names in selectors truncate with ellipsis instead of breaking the layout
+- **WCAG AA themed colors** — light and dark themes use separate color palettes, each verified for ≥4.5:1 contrast ratio
+- Faster state-based filtering in review queries
+- Bug fixes, performance improvements, and UI polish
+
 ## 1.3.4
 
 - **Faster diff view** — new fast engine is now the default for HTML and headers diffs, dramatically improving rendering speed; rich engine available as an experimental alternative for character-level highlighting
