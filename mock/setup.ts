@@ -71,6 +71,10 @@ function trustCertificate(): void {
 }
 
 async function setupSystem(): Promise<void> {
+    if (process.getuid?.() !== 0) {
+        consola.error('❌ This step requires sudo. Please run: sudo npm run mock:setup');
+        process.exit(1);
+    }
     // This runs with sudo - handles hosts and certificate trust
     await setupHosts();
     trustCertificate();
@@ -85,7 +89,13 @@ async function setupSystem(): Promise<void> {
 async function setup(): Promise<void> {
     consola.start('Comparador Mock Server Setup\n');
 
-    // Step 1: Generate certificates if needed (no sudo required)
+    // Refuse the whole command run under sudo: it would make cert files root-owned.
+    if (process.getuid?.() === 0) {
+        consola.error('❌ Do not run this with sudo. Run: npm run mock:setup');
+        consola.info('Elevated access is requested automatically, only for the steps that need it.');
+        process.exit(1);
+    }
+
     consola.info('Checking SSL certificates...');
     if (certsExist()) {
         consola.success('Certificates already exist.');
@@ -93,8 +103,7 @@ async function setup(): Promise<void> {
         generateCerts();
     }
 
-    // Step 2: Run system setup with sudo (hosts + trust)
-    consola.info('Running system configuration (requires sudo)...\n');
+    consola.warn('You will be prompted for your password to update /etc/hosts and trust the CA certificate.\n');
     try {
         execSync(`sudo node "${path.join(__dirname, 'setup.js')}" --system`, {
             stdio: 'inherit',
