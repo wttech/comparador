@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.6
+
+- **Project sync** — share project configuration (URLs, settings, scripts, variables) with your team via GitHub, any Git remote (Bitbucket, GitLab, Gitea, self-hosted), or a local/shared folder. Push and pull explicitly, or set a Pull mode to check and pull automatically
+- **Pull mode** — choose how eagerly Comparador checks for remote changes: manual only, always, or every 5/15/60 minutes
+- Sync status is based on comparing actual content, not timestamps, so it stays accurate across providers and reconnects
+- Comments in your project variables survive sync round-trips
+- Bug fixes, performance improvements, and UI polish
+
 ## 1.3.5
 
 - **Context-gated review** — accept/reject buttons only appear when the current entity is newer than the baseline, preventing accidental review of historical data

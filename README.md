@@ -73,8 +73,19 @@ Share project configurations and test data with your team via **import/export**:
 - **Export** a project (URLs, settings, scripts) as a portable JSON file
 - **Import** on another machine — same setup, zero manual work
 - **Backup & restore** full project data including captures and screenshots — compressed exports with large project support
+- Exports exclude sensitive values (sync credentials) by default — opt in per export if you really need them included
 
 No cloud account needed — share files however your team prefers (Slack, email, Git, shared drive).
+
+### 🔄 Project Sync
+
+Keep a project's configuration (URLs, settings, scripts, variables) in sync with your team automatically, instead of manually exporting/importing files:
+
+- **GitHub** — sync directly to a repository via the GitHub API
+- **Git (any remote)** — Bitbucket, GitLab, Gitea, or any self-hosted server over HTTPS
+- **Filesystem** — read/write a local or shared folder (pair with your own VCS workflow)
+
+Push and pull explicitly whenever you want, or set a **Pull mode** (manual, always, or every 5/15/60 minutes) so Comparador checks for remote changes on its own and keeps you in sync. Nothing is sent anywhere unless you configure a provider yourself.
 
 ---
 
