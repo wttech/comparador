@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0
+## 1.4.1
 
 - **Project sync** — share project configuration (URLs, settings, scripts, variables) with your team via GitHub, any Git remote (Bitbucket, GitLab, Gitea, self-hosted), or a local/shared folder. Push and pull explicitly, or set a Pull mode to check and pull automatically
 - **Pull mode** — choose how eagerly Comparador checks for remote changes: manual only, always, or every 5/15/60 minutes
