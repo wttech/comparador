@@ -102,7 +102,7 @@ Push and pull explicitly whenever you want, or set a **Pull mode** (manual, alwa
 | **Beyond screenshots**       | 🟢 HTML + headers + logs + metrics | 🔴 Screenshots only | 🔴 Screenshots only | 🔴 Screenshots only |
 | **Auth / cookies scripting** | 🟢 Yes              | 🟡 Config           | 🟡 Config           | 🟢 Yes              |
 | **CI/CD integration**        | 🔴 No               | 🟢 Yes              | 🟢 Yes              | 🟢 Yes              |
-| **Team collaboration**       | 🟡 Import/export    | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
+| **Team collaboration**       | 🟢 Git/GitHub sync  | 🟢 Cloud dashboard  | 🟡 Git              | 🟡 Git              |
 
 ### When to use Comparador
 
