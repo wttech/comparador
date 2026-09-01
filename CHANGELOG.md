@@ -1,11 +1,15 @@
 # Changelog
 
-## 1.3.6
+## 1.4.0
 
 - **Project sync** — share project configuration (URLs, settings, scripts, variables) with your team via GitHub, any Git remote (Bitbucket, GitLab, Gitea, self-hosted), or a local/shared folder. Push and pull explicitly, or set a Pull mode to check and pull automatically
 - **Pull mode** — choose how eagerly Comparador checks for remote changes: manual only, always, or every 5/15/60 minutes
 - Sync status is based on comparing actual content, not timestamps, so it stays accurate across providers and reconnects
 - Comments in your project variables survive sync round-trips
+- **Clear with baselines** — optionally clear baseline data when clearing a project, group, or URL
+- Refined screenshot sensitivity validation and descriptions
+- Consistent settings resolution when comparing attempts, including comparisons across projects
+- More information visible in searchable selectors, with full values available in tooltips
 - Bug fixes, performance improvements, and UI polish
 
 ## 1.3.5
