@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.2
+
+- **Project sync** — safer handling of changes when synchronizing projects
+- **Removal policies** — choose how removed project data is handled during sync
+- Documented capture and automation timeouts
+- Updated footer branding and links
+
 ## 1.4.1
 
 - **Project sync** — share project configuration (URLs, settings, scripts, variables) with your team via GitHub, any Git remote (Bitbucket, GitLab, Gitea, self-hosted), or a local/shared folder. Push and pull explicitly, or set a Pull mode to check and pull automatically
