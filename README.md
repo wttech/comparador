@@ -11,6 +11,15 @@
   <a href="https://chromewebstore.google.com/detail/ocfpngpgnhjcpnolhjkpfanhgoalbbhd"><img src="https://img.shields.io/badge/Install_for_Free-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Install from Chrome Web Store"></a>
   <br>
   <a href="https://chromewebstore.google.com/detail/ocfpngpgnhjcpnolhjkpfanhgoalbbhd"><img src="https://img.shields.io/chrome-web-store/v/ocfpngpgnhjcpnolhjkpfanhgoalbbhd?label=Chrome%20Web%20Store" alt="Chrome Web Store"></a>
+  <br>
+  <sub>Proudly sponsored by:</sub>
+  <br><br>
+  <a href="https://enterprisesolutions.wpp.com/">
+    <picture>
+      <source srcset="assets/wpp-es-primary-white.svg" media="(prefers-color-scheme: dark)">
+      <img src="assets/wpp-es-primary-navy.svg" height="20" alt="WPP Enterprise Solutions">
+    </picture>
+  </a>
 </p>
 
 ---
