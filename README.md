@@ -205,6 +205,12 @@ Install directly from the [Chrome Web Store](https://chromewebstore.google.com/d
 
 ## Known Issues
 
+### Screenshots differ across machines — by design, not a defect
+
+Cross-machine visual parity is a famously hard, arguably unsolved problem across the whole VRT space — browser versions, OS versions, GPUs, monitors, and font rendering all shift constantly. Even purpose-built cross-platform tools that go to great lengths to control these variables (e.g. Percy, rendering on managed cloud browsers) still ship with known gaps — Percy serializes the DOM at the moment `prefers-reduced-motion` kicks in, but the actual re-render still runs live, a mismatch by design rather than an oversight.
+
+Comparador deliberately does not try to solve cross-machine parity. It's built for ad-hoc capture + compare **on one machine**, not as a universal cross-platform diffing engine — the signal that matters is the delta that's meaningful *right now, on this device*, not a full cross-environment rendering matrix. In practice: capture and compare on hardware close to your actual end users, so you're testing what has business value rather than chasing edge cases that only satisfy a developer's sense of "complete" coverage. That's a deliberate scope boundary, not a limitation Comparador is trying to work around.
+
 ### Popup takes several seconds (or doesn't open) on macOS
 
 If the toolbar popup takes anywhere from a few seconds up to ~60s to appear — or doesn't render at all — after Chrome has been idle for a while, this is a confirmed **Chrome bug on macOS**, not a Comparador issue. It affects every extension with a popup: reproducible even with a 3-line test extension that has no permissions and no service worker. Root cause: Chrome loads the popup's renderer at background process priority until its first paint completes, which gets throttled hard on Apple Silicon.
@@ -220,12 +226,6 @@ open -na "Google Chrome" --args --enable-features=PMLoadingPageVoter --restore-l
 Wrap it in an Automator app for a one-click launcher if you don't want to use the terminal each time.
 
 Anecdotally, opening any other extension page (e.g. Options) first, then the popup, also seems to help — plausibly because it forces an already-warm, foregrounded renderer process to be reused. Take that with a grain of salt: the bug thread itself notes that symptom severity swings a lot hour-to-hour on affected machines, so a "fix" that seems to work today may not tomorrow. The flag above is the only change actually confirmed to eliminate the delay.
-
-### Screenshots differ across machines — by design, not a defect
-
-Cross-machine visual parity is a famously hard, arguably unsolved problem across the whole VRT space — browser versions, OS versions, GPUs, monitors, and font rendering all shift constantly. Even purpose-built cross-platform tools that go to great lengths to control these variables (e.g. Percy, rendering on managed cloud browsers) still ship with known gaps — Percy serializes the DOM at the moment `prefers-reduced-motion` kicks in, but the actual re-render still runs live, a mismatch by design rather than an oversight.
-
-Comparador deliberately does not try to solve cross-machine parity. It's built for ad-hoc capture + compare **on one machine**, not as a universal cross-platform diffing engine — the signal that matters is the delta that's meaningful *right now, on this device*, not a full cross-environment rendering matrix. In practice: capture and compare on hardware close to your actual end users, so you're testing what has business value rather than chasing edge cases that only satisfy a developer's sense of "complete" coverage. That's a deliberate scope boundary, not a limitation Comparador is trying to work around.
 
 ---
 
