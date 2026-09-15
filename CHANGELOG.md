@@ -1,11 +1,18 @@
 # Changelog
 
-## 1.4.3
+## 1.4.4
 
-- **AEM navigation script fixes** — corrected jump links for AEMaaCS's unified shell editor URLs (`/ui#/aem/editor.html/...`), CRX/DE links with query suffixes, and pages with no resolvable content path — cross-environment and Author/Publish jumps now resolve correctly in every case
+- **Group compare button** — Manage view for a group now has a Compare button (previously only available on captures/attempts), comparing the group's baseline capture against its latest
 - **Popup action menu** — replaced the right-click trigger (which could close the popup before the menu opened) with a compact left-click button next to each navigation link
 - Added a Known Issues section to the documentation, covering a macOS Chrome popup-latency bug and expectations around cross-machine screenshot differences
 - Bug fixes and stability improvements
+
+**AEM (Adobe Experience Manager):**
+
+- **Comparison defaults** — HTML diff normalization now ships with working AEMaaCS clientlib cache-bust hash handling, Core Components data layer noise removal (`repo:id`, `repo:modifyDate`), and adaptive image (`coreimg`) rendition timestamp normalization, so cross-environment AEM diffs no longer flag pure infrastructure noise as changes
+- **Opt-in environment host normalization** — documented `replacePatterns` examples for normalizing direct AEMaaCS Author/Publish hosts or public dispatcher/CDN domains that differ per environment, for projects without a shared public domain in front
+- **Navigation script fixes** — corrected jump links for AEMaaCS's unified shell editor URLs (`/ui#/aem/editor.html/...`), CRX/DE links with query suffixes, and pages with no resolvable content path — cross-environment and Author/Publish jumps now resolve correctly in every case
+- Improved consistency between generic and AEM project variable presets — capture and comparison override examples now documented in both
 
 ## 1.4.2
 
