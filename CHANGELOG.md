@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.3
+
+- **AEM navigation script fixes** — corrected jump links for AEMaaCS's unified shell editor URLs (`/ui#/aem/editor.html/...`), CRX/DE links with query suffixes, and pages with no resolvable content path — cross-environment and Author/Publish jumps now resolve correctly in every case
+- **Popup action menu** — replaced the right-click trigger (which could close the popup before the menu opened) with a compact left-click button next to each navigation link
+- Added a Known Issues section to the documentation, covering a macOS Chrome popup-latency bug and expectations around cross-machine screenshot differences
+- Bug fixes and stability improvements
+
 ## 1.4.2
 
 - **Project sync** — safer handling of changes when synchronizing projects
