@@ -1,9 +1,10 @@
 # Changelog
 
-## 1.4.4
+## 1.4.5
 
 - **Group compare button** — Manage view for a group now has a Compare button (previously only available on captures/attempts), comparing the group's baseline capture against its latest
 - **Popup action menu** — replaced the right-click trigger (which could close the popup before the menu opened) with a compact left-click button next to each navigation link
+- **Historical comparisons** — capture "compared with" badges and "View comparison" links now stay more accurate even after the baseline changes later
 - Added a Known Issues section to the documentation, covering a macOS Chrome popup-latency bug and expectations around cross-machine screenshot differences
 - Bug fixes and stability improvements
 

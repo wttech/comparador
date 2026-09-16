@@ -60,6 +60,7 @@ No pipelines. No accounts. No external servers.
 | ✅ **Baselines**     | Accept/reject workflow, auto + manual baseline pinning, compare any two captures           |
 | 🔄 **Auto Compare**  | Automatic comparison against baselines after capture, configurable thresholds, auto-accept |
 | 🚀 **Batch Capture** | Capture projects or groups of URLs, compare across environments                            |
+| 🤝 **Team Sync**     | Share project setup with your team — export/import files, or auto-sync via Git/GitHub, no account needed |
 | ⚡ **Popup**         | Quick environment switching + fast access to frequently tested pages                       |
 | 📖 **Built-in Help** | Guides on baselines, scripting, keyboard shortcuts, and more — right inside the extension  |
 
