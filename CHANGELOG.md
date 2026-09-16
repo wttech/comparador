@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.6
+
+- Popup bug fixes
+
 ## 1.4.5
 
 - **Historical comparisons** — capture "compared with" badges and "View comparison" links now stay more accurate even after the baseline changes later
