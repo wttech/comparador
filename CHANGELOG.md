@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.5.0
+
+- **Popup navigation** — clearer, more reliable navigation across project structures and environments
+- **Per-link options** — URL variants and query parameters are now scoped to individual links, preventing invalid combinations and making the final URL easier to preview
+
+**AEM (Adobe Experience Manager):**
+
+- **AEM navigation and setup** — improved support for Author, Publish, Live/CDN, and local environments
+- **Local Publish through Dispatcher** — local navigation now follows the supported AEM delivery setup, with mapped public paths instead of direct unmapped Publish access
+
+### Upgrade notes: 1.4.7 → 1.5.0
+
+Navigation scripts now use a typed result contract and per-link `modifiers`. This is an intentional one-time cleanup: saved navigation scripts in existing projects need a small update, but afterwards URL options stay next to the links they actually support and the popup can resolve each final URL safely.
+
+Before:
+
+```js
+return { navigations, queryParams };
+```
+
+After:
+
+```js
+return { type: 'list', navigation: { items: navigations } };
+```
+
+Global `queryParams` should move to `modifiers` on the relevant links, with final URLs handled by the script's `value.type === 'resolve'` branch. See **Help → Automation → Navigation Script** for the supported contract and examples. The migration is intentionally explicit so Comparador never guesses how a project's custom URL variants should behave.
+
 ## 1.4.6
 
 - Popup bug fixes
