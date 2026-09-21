@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.1
+
+- **Page readiness steps** — the default Page script can now wait for configured globals, flags, and synchronous or asynchronous ready functions before preparing the DOM, improving capture stability for complex applications and SPAs
+- **Script testing** — Setup and Navigation scripts can now be tested directly from the project editor using the current unsaved script and variables, with returned data shown before anything is applied
+- Expanded Automation and Capture documentation with readiness configuration, debugging guidance, and script-testing workflows
+
+### Upgrade notes: 1.5.0 → 1.5.1
+
+Existing projects keep their saved Page scripts. To use `capture.await`, load the updated **Generic** Page script template or port the readiness-step logic into your customized script. Loading the template replaces the current script, so preserve any project-specific customizations first.
+
 ## 1.5.0
 
 - **Popup navigation** — clearer, more reliable navigation across project structures and environments
