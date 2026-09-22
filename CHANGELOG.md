@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.2
+
+- **Popup welcome screen** — added quick access to import existing projects
+
 ## 1.5.1
 
 - **Page readiness steps** — the default Page script can now wait for configured globals, flags, and synchronous or asynchronous ready functions before preparing the DOM, improving capture stability for complex applications and SPAs
