@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.5.3
+
+- **Link detail panels** — the "…" button drills into a dedicated panel (with breadcrumb back) showing modifier chips, a live URL preview, and contextual actions — **Open** for other pages, **Update** for the current one (disabled when nothing would change)
+- **Deep links into the popup** — scripts can set `navigation.autoOpenId` to open a specific link's detail panel on load; the AEM template opens the tier serving your current page, so its options are one click away
+- **Applied options detected from the URL** — `link.selections` lets a script mark options already in effect on the current page (`wcmmode`, `debugClientLibs`, `debug`, the active view), so chips reflect reality and **Update** reproduces the exact URL
+- **Smarter "Open on"** — the group only appears on translatable content pages; tool consoles and foreign hosts get clean Browse links instead of 404-prone path transplants
+- **Safer navigation on unknown pages** — when the current tab's host matches no configured environment, links target the environment's default page
+- Navigation script results are validated against a typed schema — malformed output surfaces a clear error instead of silently breaking
+
+**AEM (Adobe Experience Manager):**
+
+- **View options for every tier** — choose how the current page renders: on Author — Editor, Sites console, CRX/DE, or Direct; on Publish — CRX/DE or Direct (Live stays clean, as a CDN domain)
+- **CRX/DE only where it exists** — a single `crxAvailable(env, hostKey)` predicate in the script enables it on non-AEMaaCS hosts (local/on-prem/AMS); adapt it for custom setups like dev sandboxes in one line
+- **AEM tool pages understood** — `aem.toolRoots` marks console and system endpoints (`/acm`, `/system`, `/sites`…), which no longer receive bogus content-path transplants that would 404
+- **Unified Shell handled both ways** — `/ui` URLs unwrap to classic routes when swapping onto non-cloud authors, and stay `/ui` on AEMaaCS; the set of cloud hosts is configurable via `aem.unifiedShellHosts`
+- **Consoles open at their roots** — Sites at the content root, Assets at the new `aem.damRoot` (default `/content/dam`), CRX/DE at the content root node; viewing the current page in a console is covered by View options
+- `aem.unifiedShell` removed — generated links always use classic `/editor.html`, which works on-prem/AMS and redirects to Unified Shell automatically on AEMaaCS
+
+### Upgrade notes: 1.5.2 → 1.5.3
+
+The contract additions (`navigation.autoOpenId`, `link.selections`) are optional and backward compatible — existing navigation scripts keep working unchanged.
+
+If your project uses a customized AEM navigation script, reload the updated template (preserve customizations first) or port the relevant pieces. Two variables were removed and can be deleted from your variables: `aem.unifiedShell` (classic editor URLs are now always generated) and `aem.crxDisabled` (replaced by the host-based `crxAvailable` predicate). New variables are optional: `aem.toolRoots`, `aem.unifiedShellHosts`, `aem.damRoot`.
+
 ## 1.5.2
 
 - **Popup welcome screen** — added quick access to import existing projects
