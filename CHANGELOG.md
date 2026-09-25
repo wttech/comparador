@@ -1,28 +1,43 @@
 # Changelog
 
-## 1.5.4
+## 1.5.5
 
-- **Link detail panels** — the "…" button opens a dedicated panel with modifier chips, a live URL preview, and contextual actions — **Open** for other pages, **Update** for the current one
-- **Deep links into the popup** — `navigation.autoOpenId` opens a link's detail panel on load; the AEM template opens the tier serving your current page
-- **Applied options detected from the URL** — `link.selections` marks options already in effect (`wcmmode`, `debugClientLibs`, `debug`, the active view), so chips reflect reality and **Update** reproduces the exact URL
-- **Modifier applicability (`on`)** — a modifier can declare which sibling options it is compatible with: `['editor', 'direct']` allows, `'!id'` denies, `{ match: 'all', values }` requires all. Incompatible modifiers are hidden in the popup and skipped at resolve time — the AEM template uses this to keep page params off console views like Sites and CRX/DE
-- **Smarter "Open on"** — shown only on translatable content pages; tool consoles and foreign hosts get clean Browse links instead of 404-prone path transplants; unmatched hosts fall back to the environment's default page
-- Navigation script results are validated against a typed schema — malformed output surfaces a clear error instead of silently breaking
+- **Link options at a glance** — click "…" next to a navigation link to open its detail panel: pick options as chips, see the exact URL update live, then **Open** it, or **Update** the page you're already on
+- **Popup opens where you are** — the navigation script can point the popup straight at the link for the page you're on (the AEM template does), so the most likely next step is one click away
+- **Options already in effect are recognized** — the popup reads them back from the current URL (e.g. `?wcmmode=disabled` shows up as *WCM mode: Disabled*), so what you see matches what the page is actually using
+- **Only options that make sense** — options that don't apply to the current choice are hidden and never added to the URL (e.g. page parameters disappear when you switch to a console view). Your picks are kept and come back when you switch back
+- **Fewer broken links** — "Open on" appears only on real content pages; on tool pages or unknown sites you get plain Browse links instead of guessed URLs that would 404
+- Clear error messages when a navigation script returns something unexpected, instead of a silently broken popup
 
 **AEM (Adobe Experience Manager):**
 
-- **View options for every tier** — Author: Editor, Sites console, CRX/DE, Direct; Publish: CRX/DE, Direct (Live stays clean, as a CDN domain)
-- **CRX/DE only where it exists** — the `crxAvailable(env, hostKey)` predicate enables it on non-AEMaaCS hosts; adjust in one line for custom setups
-- **AEM tool pages understood** — `aem.toolRoots` marks console and system endpoints, which no longer receive bogus path transplants
-- **Unified Shell handled both ways** — `/ui` URLs unwrap to classic routes on non-cloud authors, stay `/ui` on AEMaaCS; cloud hosts configurable via `aem.unifiedShellHosts`
-- **Consoles open at their roots** — Sites at the content root, Assets at `aem.damRoot` (default `/content/dam`), CRX/DE at the content root node
-- `aem.unifiedShell` removed — links always use classic `/editor.html`, which redirects to Unified Shell automatically on AEMaaCS
+- **Choose how to open a page** — Author: Editor, Sites console, CRX/DE or the plain page; Publish: the plain page or CRX/DE. Live stays a clean public URL
+- **Page options where they belong** — WCM mode and client library debugging on Author, `?debug=true` on Live, each available only in the views where AEM actually honors it
+- **CRX/DE only where it works** — offered on local, on-prem and AMS instances; hidden on AEM as a Cloud Service, where it isn't available
+- **Consoles open in the right place** — Sites opens at your content root, Assets at your DAM folder, CRX/DE at the content root node
+- **Tool pages recognized** — consoles and system pages (CRX/DE, Sites, Assets, `/system`, …) are no longer mistaken for site pages when switching environments
+- **Unified Shell handled for you** — `/ui` URLs are kept on AEM as a Cloud Service and converted to classic URLs on local and on-prem authors
 
-### Upgrade notes: 1.5.2 → 1.5.4
+### Upgrade notes: 1.5.2 → 1.5.5
 
-All contract additions (`autoOpenId`, `link.selections`, `on`) are optional and backward compatible.
+**Your existing projects and navigation scripts keep working** — everything new in the navigation script contract is optional.
 
-If your project uses a customized AEM navigation script, reload the updated template (preserve customizations first). Removed variables: `aem.unifiedShell`, `aem.crxDisabled` (replaced by the `crxAvailable` predicate). New optional variables: `aem.toolRoots`, `aem.unifiedShellHosts`, `aem.damRoot`.
+What you'll notice in the popup:
+
+- The link options menu is now a detail panel with a live URL preview and an **Open** / **Update** button
+- On AEM Publish, only the **View** option remains, and only where CRX/DE is available. *Client libraries: Debug* is now offered on Author only
+- Options that don't fit the current view are hidden rather than producing an invalid URL
+
+**AEM projects:** to get the new views and options, reload the **AEM** navigation script and variables templates in the project editor. Loading a template replaces the current content, so copy your customizations first. Variable changes:
+
+- Removed: `aem.unifiedShell` (links always use classic `/editor.html`, which AEM as a Cloud Service redirects to Unified Shell), `aem.crxDisabled` (replaced by the `crxAvailable(env, hostKey)` function at the top of the script — one line to adjust for custom setups)
+- New, optional: `aem.damRoot` (Assets console folder, default `/content/dam`), `aem.toolRoots` (paths treated as tool pages), `aem.unifiedShellHosts` (hosts that support `/ui`)
+
+**Custom navigation scripts** can opt into the new features — see **Help → Automation → Navigation Script**:
+
+- `navigation.autoOpenId` — the link whose detail panel opens on load
+- `link.selections` — options already in effect on the current page
+- `modifier.on` — when a modifier applies: `['editor', 'direct']` = any of these selected, `{ match: 'all', values: [...] }` = all of them, `'!id'` = not when selected. Your `resolve` branch should skip inapplicable modifiers the same way
 
 ## 1.5.2
 
