@@ -253,6 +253,14 @@ New projects come pre-configured for mock server — serves as a reference for r
 
 ---
 
+## References
+
+* Talk at AdaptTo 2026 Conference - [Comparador – Spot the Difference: Surviving AEM Migrations & Deployments Without Going Blind](https://adapt.to/2026/schedule/comparador-spot-the-difference-surviving-aem-migrations-and-deployments-without-going-blind) by [Krystian Panek](mailto:krystian.panek@vml.com) &amp; [Tomasz Sobczyk](mailto:tomasz.sobczyk@vml.com)
+
+[![AdaptTo 2026 Video](assets/adaptto-2026-video.jpg)](https://www.youtube.com/watch?v=sadCfajdDr4)
+
+---
+
 ## Authors
 
 - **Krystian Panek** — Founder & Maintainer — [krystian.panek@vml.com](mailto:krystian.panek@vml.com)
